@@ -1,0 +1,34 @@
+PODS:
+  - BloodMagic (0.3.1):
+    - BloodMagic/Core
+    - BloodMagic/Initializers
+    - BloodMagic/Lazy
+  - BloodMagic/Core (0.3.1)
+  - BloodMagic/Initializers (0.3.1):
+    - BloodMagic/Core
+  - BloodMagic/Lazy (0.3.1):
+    - BloodMagic/Initializers
+  - FMDB (2.1):
+    - FMDB/standard
+  - FMDB/common (2.1)
+  - FMDB/standard (2.1):
+    - FMDB/common
+  - JNWAnimatableWindow (0.5.0)
+  - JNWSpringAnimation (0.5)
+  - ObjectiveSugar (0.9)
+
+DEPENDENCIES:
+  - BloodMagic
+  - FMDB
+  - JNWAnimatableWindow
+  - JNWSpringAnimation
+  - ObjectiveSugar
+
+SPEC CHECKSUMS:
+  BloodMagic: 853a8352651c96887bcbdff9895d76de5499c223
+  FMDB: 3fd5aaf632ca4ed39e3f101e0398504e6d5b0918
+  JNWAnimatableWindow: c67f1dc6ad17aa6dbbb1ac9592d5bcda32dae2c1
+  JNWSpringAnimation: b9c5600714c7b0532274b9ef8b039235c1cdd2ba
+  ObjectiveSugar: 81337e36790b5a157ee6ccdcf65c91393ca5d900
+
+COCOAPODS: 0.28.0

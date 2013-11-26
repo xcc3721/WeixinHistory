@@ -5,5 +5,9 @@
 //
 
 #ifdef __OBJC__
-    #import <Cocoa/Cocoa.h>
+#import <Cocoa/Cocoa.h>
+#import "ObjectiveSugar.h"
+#import "JNWAnimatableWindow.h"
+#import <QuartzCore/QuartzCore.h>
+#import "FMDatabase.h"
 #endif

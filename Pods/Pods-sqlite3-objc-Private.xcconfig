@@ -1,0 +1,5 @@
+#include "Pods-sqlite3-objc.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/sqlite3-objc" "${PODS_ROOT}/BuildHeaders/sqlite3-objc/Sqlite3" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/cdebug" "${PODS_ROOT}/Headers/sqlite3-objc" "${PODS_ROOT}/Headers/sqlite3-objc/Sqlite3"
+OTHER_LDFLAGS = -ObjC ${PODS_SQLITE__OBJC_OTHER_LDFLAGS}
+PODS_ROOT = ${SRCROOT}

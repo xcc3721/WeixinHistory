@@ -1,0 +1,5 @@
+pod 'BloodMagic'
+pod 'ObjectiveSugar'
+pod 'FMDB'
+pod 'JNWAnimatableWindow'
+pod 'JNWSpringAnimation'
