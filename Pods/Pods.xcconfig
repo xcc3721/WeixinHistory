@@ -1,5 +1,5 @@
 CLANG_CXX_LIBRARY = libc++
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/BloodMagic" "${PODS_ROOT}/Headers/FMDB" "${PODS_ROOT}/Headers/JNWAnimatableWindow" "${PODS_ROOT}/Headers/JNWSpringAnimation" "${PODS_ROOT}/Headers/ObjectiveSugar"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/BloodMagic" "${PODS_ROOT}/Headers/FMDB" "${PODS_ROOT}/Headers/JNWAnimatableWindow" "${PODS_ROOT}/Headers/JNWSpringAnimation" "${PODS_ROOT}/Headers/ObjectiveSugar" "${PODS_ROOT}/Headers/XMLReader"
 OTHER_LDFLAGS = -ObjC  -ObjC  -ObjC  -ObjC  -ObjC -lc++ -lsqlite3 -framework QuartzCore
 PODS_ROOT = ${SRCROOT}/Pods

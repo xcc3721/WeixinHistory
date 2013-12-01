@@ -10,4 +10,5 @@
 #import "JNWAnimatableWindow.h"
 #import <QuartzCore/QuartzCore.h>
 #import "FMDatabase.h"
+#import "NSAlert+Popover.h"
 #endif

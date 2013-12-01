@@ -47,10 +47,27 @@
 
 - (IBAction)goMainWindow:(id)sender
 {
-    [self.window orderOut:sender];
-    self.mainWC = [WHMainWindowController new];
-    self.mainWC.workingFolder = [NSURL URLWithString:self.folderField.stringValue];
-    [self.mainWC.window makeKeyAndOrderFront:sender];
+    if (![self validateFolderField])
+    {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"FolderErr" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Enter the correct folder path"];
+        [alert runAsPopoverForView:self.folderField withCompletionBlock:nil];
+    }
+    else
+    {
+        [self.window orderOut:sender];
+        self.mainWC = [WHMainWindowController new];
+        self.mainWC.workingFolder = [NSURL URLWithString:self.folderField.stringValue];
+        [self.mainWC.window makeKeyAndOrderFront:sender];
+    }
+}
+
+- (BOOL)validateFolderField
+{
+    if (![self.folderField.stringValue length])
+    {
+        return NO;
+    }
+    return YES;
 }
 
 @end

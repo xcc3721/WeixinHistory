@@ -64,6 +64,7 @@ static NSAlert *currentlyOpenedAlert;
 
 - (void) stopSynchronousPopoverAlert: (NSButton *) clickedButton {
 	
+    NSAlert *tempStrongAlert = self;
 	// Determine clicked button index
 	NSUInteger clickedIx = [[self buttons] indexOfObject:clickedButton];
 
@@ -91,6 +92,7 @@ static NSAlert *currentlyOpenedAlert;
 	
 	// Check for previously shown Popover Alerts
 	[self checkForPreviouslyShownAlerts];
+    tempStrongAlert = nil;
 }
 
 - (void) checkForPreviouslyShownAlerts {

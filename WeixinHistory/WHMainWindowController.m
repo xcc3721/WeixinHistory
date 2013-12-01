@@ -7,17 +7,17 @@
 //
 
 #import "WHMainWindowController.h"
+#import "WHDBManager.h"
 
 @interface WHMainWindowController ()
 @property (nonatomic, weak) NSFileManager *fileManager;
-@property (nonatomic, strong) FMDatabase *database;
 @end
 
 @implementation WHMainWindowController
 
 - (void)dealloc
 {
-    [self.database close];
+    
 }
 
 - (id)initWithWindow:(NSWindow *)window
@@ -46,12 +46,12 @@
         NSString *lastComponent = [content lastPathComponent];
         if ([[content resourceValuesForKeys:@[NSURLIsDirectoryKey] error:nil][NSURLIsDirectoryKey] boolValue] == YES && [lastComponent length] == 32 && ![lastComponent containsString:@"00000000000000000000000000000000"])
         {
-            self.database = [FMDatabase databaseWithPath:[content URLByAppendingPathComponent:@"DB/MM.sqlite"].path];
-            [self.database open];
+            [WHDBManager setDBPath:[content URLByAppendingPathComponent:@"DB/MM.sqlite"].path];
+            *stop = YES;
         }
-        
     }];
     
+    [WHDBManager defaultManager];
     
     
 //    self.database = [FMDatabase databaseWithPath:self.workingFolder.path];

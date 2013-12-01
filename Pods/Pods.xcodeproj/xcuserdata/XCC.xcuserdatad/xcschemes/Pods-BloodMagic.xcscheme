@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4994B443501D4333ABDFA624"
+               BlueprintIdentifier = "D7C083EDA9324D0192EBFEFF"
                BuildableName = "libPods-BloodMagic.a"
                BlueprintName = "Pods-BloodMagic"
                ReferencedContainer = "container:Pods.xcodeproj">
