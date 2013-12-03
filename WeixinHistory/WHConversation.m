@@ -9,20 +9,28 @@
 #import "WHConversation.h"
 #import "WHMessage.h"
 
+@interface WHConversation ()
+
+@property (nonatomic, readwrite, strong) NSArray *messages;
+
+@end
+
+
 @implementation WHConversation
 
 + (instancetype)conversationWithResult:(FMResultSet *)set
 {
-    do {
-        BOOL rc = [set next];
-        if (rc)
-        {
-            
-            NSLog(@"%@", [set resultDictionary]);
-        }
-    } while ([set hasAnotherRow]);
+    NSMutableArray *array = [NSMutableArray array];
+    while ([set next])
+    {
+        WHMessage *message = [[WHMessage alloc] initWithDictionary:set.resultDictionary];
+        [array addObject:message];
+    }
     
-    return nil;
+    WHConversation *conversation = [[self alloc] init];
+    [conversation setMessages:[NSArray arrayWithArray:array]];
+    
+    return conversation;
 }
 
 @end

@@ -12,4 +12,6 @@
 
 + (instancetype)conversationWithResult:(FMResultSet *)set;
 
+@property (readonly) NSArray *messages;
+
 @end

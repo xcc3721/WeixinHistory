@@ -13,4 +13,6 @@
 + (id)defaultManager;
 + (void)setDBPath:(NSString *)path;
 
+
+
 @end
