@@ -12,4 +12,6 @@
 #import "FMDatabase.h"
 #import "FMDatabaseQueue.h"
 #import "NSAlert+Popover.h"
+#import "NSString+MD5.h"
+#import "NSImage+Resize.h"
 #endif

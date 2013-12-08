@@ -1,0 +1,2 @@
+PODS_LIBPLIST_HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2" "${PODS_ROOT}/libplist/include/"
+PODS_LIBPLIST_OTHER_LDFLAGS = -lxml2

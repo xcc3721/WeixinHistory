@@ -1,1 +1,0 @@
-../../BloodMagic/BloodMagic/Sources/Modules/Lazy/Public/BMInitializerRegistry+LazyRegistry.h

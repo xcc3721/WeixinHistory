@@ -1,5 +1,4 @@
-CLANG_CXX_LIBRARY = libc++
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/BloodMagic" "${PODS_ROOT}/Headers/FMDB" "${PODS_ROOT}/Headers/JNWAnimatableWindow" "${PODS_ROOT}/Headers/JNWSpringAnimation" "${PODS_ROOT}/Headers/ObjectiveSugar" "${PODS_ROOT}/Headers/XMLReader"
-OTHER_LDFLAGS = -ObjC  -ObjC  -ObjC  -ObjC  -ObjC -lc++ -lsqlite3 -framework QuartzCore
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 HAVE_OPENSSL HAVE_VASPRINTF HAVE_ASPRINTF HAVE_STPCPY HAVE_PLIST
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/FMDB" "${PODS_ROOT}/Headers/ITSidebar" "${PODS_ROOT}/Headers/JNWAnimatableWindow" "${PODS_ROOT}/Headers/JNWSpringAnimation" "${PODS_ROOT}/Headers/MD5Digest" "${PODS_ROOT}/Headers/ObjectiveSugar" "${PODS_ROOT}/Headers/XMLReader" "${PODS_ROOT}/Headers/libimobiledevice" "${PODS_ROOT}/Headers/libplist" "${PODS_ROOT}/Headers/usbmuxd" "${PODS_ROOT}/libplist/include/" "${PODS_ROOT}/libimobiledevice/" "${PODS_ROOT}/libimobiledevice/include/" "$(SDKROOT)/usr/include/libxml2" "${PODS_ROOT}/libplist/include/" "${PODS_ROOT}/libplist/include/"
+OTHER_LDFLAGS = -ObjC -lsqlite3 -lssl -lxml2 -framework QuartzCore
 PODS_ROOT = ${SRCROOT}/Pods

@@ -1,37 +1,42 @@
 PODS:
-  - BloodMagic (0.3.1):
-    - BloodMagic/Core
-    - BloodMagic/Initializers
-    - BloodMagic/Lazy
-  - BloodMagic/Core (0.3.1)
-  - BloodMagic/Initializers (0.3.1):
-    - BloodMagic/Core
-  - BloodMagic/Lazy (0.3.1):
-    - BloodMagic/Initializers
   - FMDB (2.1):
     - FMDB/standard
   - FMDB/common (2.1)
   - FMDB/standard (2.1):
     - FMDB/common
+  - ITSidebar (0.0.1)
   - JNWAnimatableWindow (0.5.0)
   - JNWSpringAnimation (0.5)
+  - libimobiledevice (1.0.0):
+    - libplist
+    - usbmuxd
+  - libplist (1.0.0)
+  - MD5Digest (0.1.0)
   - ObjectiveSugar (0.9)
+  - usbmuxd (1.0.0):
+    - libplist
   - XMLReader (0.0.2)
 
 DEPENDENCIES:
-  - BloodMagic
   - FMDB
+  - ITSidebar
   - JNWAnimatableWindow
   - JNWSpringAnimation
+  - libimobiledevice
+  - MD5Digest
   - ObjectiveSugar
   - XMLReader
 
 SPEC CHECKSUMS:
-  BloodMagic: 853a8352651c96887bcbdff9895d76de5499c223
   FMDB: 3fd5aaf632ca4ed39e3f101e0398504e6d5b0918
+  ITSidebar: 05bb8141f9b07685ced855183ccec1997d4b18e5
   JNWAnimatableWindow: c67f1dc6ad17aa6dbbb1ac9592d5bcda32dae2c1
   JNWSpringAnimation: b9c5600714c7b0532274b9ef8b039235c1cdd2ba
+  libimobiledevice: 9391e4cafb3240c35f57dc36a9336281b256139e
+  libplist: 5e958bf17dab7112166a09f6a37e4746ceae5627
+  MD5Digest: 355c8733ab522cc516a4047e2d93e2b842947b18
   ObjectiveSugar: 81337e36790b5a157ee6ccdcf65c91393ca5d900
+  usbmuxd: 660f430a761eeed896c3434993f48b0bf057953a
   XMLReader: d8a522b0362140b328bcaec7f289ff4ffffebf29
 
 COCOAPODS: 0.28.0

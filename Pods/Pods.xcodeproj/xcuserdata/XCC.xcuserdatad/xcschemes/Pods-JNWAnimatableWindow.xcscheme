@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E07B79FF8FD24F94AB131F95"
+               BlueprintIdentifier = "8EF292F84C334D1481F5A5DC"
                BuildableName = "libPods-JNWAnimatableWindow.a"
                BlueprintName = "Pods-JNWAnimatableWindow"
                ReferencedContainer = "container:Pods.xcodeproj">

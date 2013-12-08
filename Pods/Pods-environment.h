@@ -6,30 +6,6 @@
 // project.
 
 
-// BloodMagic
-#define COCOAPODS_POD_AVAILABLE_BloodMagic
-#define COCOAPODS_VERSION_MAJOR_BloodMagic 0
-#define COCOAPODS_VERSION_MINOR_BloodMagic 3
-#define COCOAPODS_VERSION_PATCH_BloodMagic 1
-
-// BloodMagic/Core
-#define COCOAPODS_POD_AVAILABLE_BloodMagic_Core
-#define COCOAPODS_VERSION_MAJOR_BloodMagic_Core 0
-#define COCOAPODS_VERSION_MINOR_BloodMagic_Core 3
-#define COCOAPODS_VERSION_PATCH_BloodMagic_Core 1
-
-// BloodMagic/Initializers
-#define COCOAPODS_POD_AVAILABLE_BloodMagic_Initializers
-#define COCOAPODS_VERSION_MAJOR_BloodMagic_Initializers 0
-#define COCOAPODS_VERSION_MINOR_BloodMagic_Initializers 3
-#define COCOAPODS_VERSION_PATCH_BloodMagic_Initializers 1
-
-// BloodMagic/Lazy
-#define COCOAPODS_POD_AVAILABLE_BloodMagic_Lazy
-#define COCOAPODS_VERSION_MAJOR_BloodMagic_Lazy 0
-#define COCOAPODS_VERSION_MINOR_BloodMagic_Lazy 3
-#define COCOAPODS_VERSION_PATCH_BloodMagic_Lazy 1
-
 // FMDB
 #define COCOAPODS_POD_AVAILABLE_FMDB
 #define COCOAPODS_VERSION_MAJOR_FMDB 2
@@ -48,6 +24,12 @@
 #define COCOAPODS_VERSION_MINOR_FMDB_standard 1
 #define COCOAPODS_VERSION_PATCH_FMDB_standard 0
 
+// ITSidebar
+#define COCOAPODS_POD_AVAILABLE_ITSidebar
+#define COCOAPODS_VERSION_MAJOR_ITSidebar 0
+#define COCOAPODS_VERSION_MINOR_ITSidebar 0
+#define COCOAPODS_VERSION_PATCH_ITSidebar 1
+
 // JNWAnimatableWindow
 #define COCOAPODS_POD_AVAILABLE_JNWAnimatableWindow
 #define COCOAPODS_VERSION_MAJOR_JNWAnimatableWindow 0
@@ -60,6 +42,12 @@
 #define COCOAPODS_VERSION_MINOR_JNWSpringAnimation 5
 #define COCOAPODS_VERSION_PATCH_JNWSpringAnimation 0
 
+// MD5Digest
+#define COCOAPODS_POD_AVAILABLE_MD5Digest
+#define COCOAPODS_VERSION_MAJOR_MD5Digest 0
+#define COCOAPODS_VERSION_MINOR_MD5Digest 1
+#define COCOAPODS_VERSION_PATCH_MD5Digest 0
+
 // ObjectiveSugar
 #define COCOAPODS_POD_AVAILABLE_ObjectiveSugar
 #define COCOAPODS_VERSION_MAJOR_ObjectiveSugar 0
@@ -71,4 +59,22 @@
 #define COCOAPODS_VERSION_MAJOR_XMLReader 0
 #define COCOAPODS_VERSION_MINOR_XMLReader 0
 #define COCOAPODS_VERSION_PATCH_XMLReader 2
+
+// libimobiledevice
+#define COCOAPODS_POD_AVAILABLE_libimobiledevice
+#define COCOAPODS_VERSION_MAJOR_libimobiledevice 1
+#define COCOAPODS_VERSION_MINOR_libimobiledevice 0
+#define COCOAPODS_VERSION_PATCH_libimobiledevice 0
+
+// libplist
+#define COCOAPODS_POD_AVAILABLE_libplist
+#define COCOAPODS_VERSION_MAJOR_libplist 1
+#define COCOAPODS_VERSION_MINOR_libplist 0
+#define COCOAPODS_VERSION_PATCH_libplist 0
+
+// usbmuxd
+#define COCOAPODS_POD_AVAILABLE_usbmuxd
+#define COCOAPODS_VERSION_MAJOR_usbmuxd 1
+#define COCOAPODS_VERSION_MINOR_usbmuxd 0
+#define COCOAPODS_VERSION_PATCH_usbmuxd 0
 

@@ -1,0 +1,5 @@
+#include "Pods-usbmuxd.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1 ${PODS_USBMUXD_GCC_PREPROCESSOR_DEFINITIONS}
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/usbmuxd" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/FMDB" "${PODS_ROOT}/Headers/ITSidebar" "${PODS_ROOT}/Headers/JNWAnimatableWindow" "${PODS_ROOT}/Headers/JNWSpringAnimation" "${PODS_ROOT}/Headers/MD5Digest" "${PODS_ROOT}/Headers/ObjectiveSugar" "${PODS_ROOT}/Headers/XMLReader" "${PODS_ROOT}/Headers/libimobiledevice" "${PODS_ROOT}/Headers/libplist" "${PODS_ROOT}/Headers/usbmuxd" ${PODS_USBMUXD_HEADER_SEARCH_PATHS}
+OTHER_LDFLAGS = -ObjC
+PODS_ROOT = ${SRCROOT}

@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-BloodMagic.xcscheme</key>
+		<key>Pods-FMDB.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-FMDB.xcscheme</key>
+		<key>Pods-ITSidebar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -24,12 +24,32 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-MD5Digest.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ObjectiveSugar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-XMLReader.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-libimobiledevice.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-libplist.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-usbmuxd.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,37 +62,57 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>29AD496610DF4128895B5E41</key>
+		<key>0CDD4961D5A5472B8C0DB1C3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4CC4E61306D5445C931E8B6E</key>
+		<key>0FFC1652F551458DAA9145C6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7AADF7AF66BE4325B740B379</key>
+		<key>4CB7C605545B4FB0A1A4B3E6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>88F0ADF9225F414CB9FA3C71</key>
+		<key>50CD15D44C2E4FF7852BB96C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D7C083EDA9324D0192EBFEFF</key>
+		<key>8EF292F84C334D1481F5A5DC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E07B79FF8FD24F94AB131F95</key>
+		<key>93984F9BB8854BE98B9CE3AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E7185729E565477E8E9444DE</key>
+		<key>AA49AD5169CB4AB8B4D60172</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BA0138F8DA8C47E7A93B203D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C60B328FE5364E55849D1DDC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CFB796E1C7614ED1B2212794</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA0CBC81E3F941CC9A7F3C81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
