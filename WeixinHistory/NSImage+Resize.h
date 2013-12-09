@@ -14,5 +14,6 @@
 - (NSImage *)resizedCellImage;
 
 + (NSImage *)cellImageNamed:(NSString *)name;
++ (NSImage *)deviceImageNamed:(NSString *)name;
 
 @end

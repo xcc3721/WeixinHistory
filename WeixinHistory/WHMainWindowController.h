@@ -11,5 +11,7 @@
 @interface WHMainWindowController : WHBaseWindowController
 
 @property (nonatomic, copy) NSURL *workingFolder;
+@property (nonatomic, copy) NSString *currentUDID;
+@property (readonly) WHDevice *currentDevice;
 
 @end

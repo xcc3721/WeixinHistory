@@ -16,4 +16,7 @@
 - (instancetype)initWithHouseArrest:(house_arrest_client_t)house appid:(NSString *)appid;
 
 - (NSArray *)appContents;
+- (NSDictionary *)infoForFilePath:(NSString *)path;
+- (NSArray *)contentsForDirectoryPath:(NSString *)path;
+- (BOOL)copyfileAtPath:(NSString *)path completion:(void (^)(NSString *localPath))completion;
 @end

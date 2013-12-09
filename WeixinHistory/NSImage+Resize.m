@@ -29,4 +29,9 @@
     return [[NSImage imageNamed:name] resizedCellImage];
 }
 
++ (NSImage *)deviceImageNamed:(NSString *)name
+{
+    return [[NSImage imageNamed:name] resizedImage:NSMakeSize(80, 80)];
+}
+
 @end

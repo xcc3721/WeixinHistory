@@ -12,6 +12,10 @@
 #import "WHApp.h"
 #import "NSString+WHHelper.h"
 
+NSString * const WHDeviceManagerDeviceDidAddNotification = @"WHDeviceManagerDeviceDidAddNotification";
+NSString * const WHDeviceManagerDeviceDidRemoveNotification = @"WHDeviceManagerDeviceDidRemoveNotification";
+NSString * const WHDeviceKey = @"WHDeviceKey";
+
 static WHDeviceManager *_manager = nil;
 
 @interface WHDeviceManager ()
@@ -78,6 +82,7 @@ void DeviceEventCallBack(const idevice_event_t *event, void *user_data)
     [device connect];
     self.devices[device.udid] = device;
     NSLog(@"Device Registed For Device:%@", device);
+    [[NSNotificationCenter defaultCenter] postNotificationName:WHDeviceManagerDeviceDidAddNotification object:nil userInfo:@{WHDeviceKey : device}];
     if (self.deviceDidAdded)
     {
         self.deviceDidAdded(device);
@@ -97,6 +102,7 @@ void DeviceEventCallBack(const idevice_event_t *event, void *user_data)
         [device disconnect];
         NSLog(@"Device Unregisted:%@", device);
         [self.devices removeObjectForKey:udid];
+        [[NSNotificationCenter defaultCenter] postNotificationName:WHDeviceManagerDeviceDidRemoveNotification object:nil userInfo:@{WHDeviceKey : device}];
         if (self.deviceDidRemoved)
         {
             self.deviceDidRemoved(device);
@@ -107,6 +113,11 @@ void DeviceEventCallBack(const idevice_event_t *event, void *user_data)
 - (NSDictionary *)currentDevices
 {
     return [NSDictionary dictionaryWithDictionary:self.devices];
+}
+
+- (WHDevice *)deviceByUUID:(NSString *)uuid
+{
+    return self.devices[uuid];
 }
 
 @end

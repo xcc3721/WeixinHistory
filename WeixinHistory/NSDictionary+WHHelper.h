@@ -12,5 +12,6 @@
 @interface NSDictionary (WHHelper)
 
 + (instancetype)dictionaryFromPlist:(plist_t)plist;
++ (instancetype)dictionaryFromCharArray:(char **)array;
 
 @end

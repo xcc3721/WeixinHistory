@@ -33,6 +33,12 @@
     return self;
 }
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    [(NSView *)self.window.contentView setWantsLayer:YES];
+}
+
 - (void)windowDidLoad
 {
     [super windowDidLoad];

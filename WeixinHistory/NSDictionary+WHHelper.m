@@ -23,4 +23,17 @@
 //    return [XMLReader dictionaryForXMLString:string error:nil];
 }
 
++ (instancetype)dictionaryFromCharArray:(char **)array
+{
+    NSMutableDictionary *result = [NSMutableDictionary dictionary];
+    NSInteger i = 0;
+    while (array[i] != nil)
+    {
+        NSString *key = [NSString stringWithCString:array[i++] encoding:NSUTF8StringEncoding];
+        NSString *value = [NSString stringWithCString:array[i++] encoding:NSUTF8StringEncoding];
+        result[key] = value;
+    }
+    return [result copy];
+}
+
 @end

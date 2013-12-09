@@ -10,8 +10,9 @@
 #import "WHDBManager.h"
 #import "ITSidebar.h"
 #import "WHDeviceManager.h"
+#import "WHDeviceViewController.h"
 
-@interface WHMainWindowController ()
+@interface WHMainWindowController () <NSPopoverDelegate>
 @property (strong) IBOutlet NSView *yellowView;
 @property (strong) IBOutlet NSView *redView;
 @property (weak) IBOutlet NSView *containerView;
@@ -23,7 +24,7 @@
 
 - (void)dealloc
 {
-    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (id)initWithWindow:(NSWindow *)window
@@ -64,32 +65,47 @@
          [device startAFCService];
          [device startInstallationService];
          [device startHouseArrest];
-         [device appWithAppId:@"com.tencent.xin" handler:^(WHApp *app)
-         {
-             NSLog(@"%@", [app appContents]);
-         }];
-         
-         [device appWithAppId:@"com.inmethod.AirVideoHD" handler:^(WHApp *app)
-         {
-             NSLog(@"%@", [app appContents]);
-         }];
      }];
     [[WHDeviceManager defaultManager] setDeviceDidRemoved:^(WHDevice *device)
-    {
-        NSLog(@"%@", device);
-    }];
+     {
+         NSLog(@"%@", device);
+     }];
     
     
     [self.sidebar setCellSize:NSMakeSize(100, 80)];
     
     [self.sidebar addItemWithImage:[NSImage cellImageNamed:@"contacts"] target:self action:@selector(showContacts:)];
     [self.sidebar addItemWithImage:[NSImage cellImageNamed:@"chat"] target:self action:@selector(showConversations:)];
+    [self.sidebar addItemWithImage:[NSImage cellImageNamed:@"apple"] target:self action:@selector(showDevicePopover:)];
     
     [self.redView.layer setBackgroundColor:[NSColor redColor].CGColor];
     [self.yellowView.layer setBackgroundColor:[NSColor yellowColor].CGColor];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceDidAdd:) name:WHDeviceManagerDeviceDidAddNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceDidRemove:) name:WHDeviceManagerDeviceDidRemoveNotification object:nil];
+    
     
 }
+
+#pragma mark -
+- (void)deviceDidAdd:(NSNotification *)notification
+{
+    if (self.currentUDID == nil)
+    {
+        self.currentUDID = [notification.userInfo[WHDeviceKey] udid];
+    }
+}
+
+- (void)deviceDidRemove:(NSNotification *)notification
+{
+    WHDevice *device = notification.userInfo[WHDeviceKey];
+    if ([self currentUDID] == [device udid])
+    {
+        self.currentUDID = [[[[WHDeviceManager defaultManager] currentDevices] allKeys] lastObject];
+    }
+}
+
+#pragma mark -
 
 - (IBAction)showContacts:(id)sender
 {
@@ -101,14 +117,38 @@
     NSLog(@"Show conversations");
 }
 
+- (IBAction)showDevicePopover:(id)sender
+{
+    NSPopover *popover = [[NSPopover alloc] init];
+    [popover setBehavior:NSPopoverBehaviorTransient];
+    [popover setAppearance:NSPopoverAppearanceHUD];
+    WHDeviceViewController *vc = [WHDeviceViewController new];
+    [popover setDelegate:self];
+    [popover setContentViewController:vc];
+    [vc setDidSelectDevice:^(WHDevice *device)
+     {
+         self.currentUDID = device.udid;
+         [popover performClose:sender];
+     }];
+    
+    [popover showRelativeToRect:[sender cellFrameAtRow:[sender selectedRow] column:[sender selectedColumn]] ofView:sender preferredEdge:NSMaxXEdge];
+}
+
 - (IBAction)test:(id)sender
 {
-    [self switchToContentViewController:nil];
+    //    [self switchToContentViewController:nil];
+    [self.currentDevice weixinWithHandler:^(WHApp *app)
+     {
+         NSLog(@"%hhd", [app copyfileAtPath:@"/Documents" completion:^(NSString *localPath)
+                         {
+                             NSLog(@"%@", localPath);
+                         }]);
+         
+     }];
 }
 
 - (void)switchToContentViewController:(NSViewController *)vc
 {
-    //    [self.containerView addSubview:self.redView];
     if ([self.redView superview])
     {
         [self replaceView:self.redView withView:self.yellowView];
@@ -134,6 +174,15 @@
     [newView.layer addAnimation:transition forKey:@"transition"];
     [oldView.layer addAnimation:transition forKey:@"transition"];
     [oldView removeFromSuperview];
+}
+
+- (WHDevice *)currentDevice
+{
+    if (self.currentUDID)
+    {
+        return [[WHDeviceManager defaultManager] currentDevices][self.currentUDID];
+    }
+    return nil;
 }
 
 @end

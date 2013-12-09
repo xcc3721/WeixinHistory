@@ -33,6 +33,7 @@
 - (void)appWithAppId:(NSString *)appId handler:(void(^)(WHApp *app))handler;
 
 - (NSString *)Model;
+
 - (long long)freeBytes;
 - (long long)totalBytes;
 - (long)blockSize;

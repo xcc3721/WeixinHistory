@@ -14,4 +14,8 @@
 #import "NSAlert+Popover.h"
 #import "NSString+MD5.h"
 #import "NSImage+Resize.h"
+#import "WHDeviceManager.h"
+#import "WHDevice+Weixin.h"
+#import "WHApp+Weixin.h"
+#import "NSDictionary+WHHelper.h"
 #endif

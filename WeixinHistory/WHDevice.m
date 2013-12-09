@@ -239,7 +239,10 @@
     {
         char *model = nil;
         afc_get_device_info_key(devafc, "Model", &model);
-        result = [NSString stringWithCString:model encoding:NSUTF8StringEncoding];
+        if (model)
+        {
+            result = [NSString stringWithCString:model encoding:NSUTF8StringEncoding];
+        }
     }
     return result;
 }
