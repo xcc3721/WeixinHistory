@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeixinHistory/WHApp.m"
-            timestampString = "408302706.306231"
+            timestampString = "408303153.484225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "-copyfileAtPath:destPath:completion:"
             landmarkType = "5">
          </BreakpointContent>
@@ -48,16 +48,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeixinHistory/WHApp.m"
-            timestampString = "408303153.484225"
+            filePath = "WeixinHistory/WHConversationListViewController.m"
+            timestampString = "408386745.761893"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "-copyfileAtPath:destPath:completion:"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "-tableView:viewForTableColumn:row:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

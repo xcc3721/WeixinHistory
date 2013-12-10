@@ -11,13 +11,17 @@
 #import "ITSidebar.h"
 #import "WHDeviceManager.h"
 #import "WHDeviceViewController.h"
+#import "WHContactsViewController.h"
+#import "WHConversationListViewController.h"
+#import "WHNoneDeviceViewController.h"
 
 @interface WHMainWindowController () <NSPopoverDelegate>
-@property (strong) IBOutlet NSView *yellowView;
-@property (strong) IBOutlet NSView *redView;
+
 @property (weak) IBOutlet NSView *containerView;
 @property (weak) IBOutlet ITSidebar *sidebar;
 @property (nonatomic, weak) NSFileManager *fileManager;
+@property (nonatomic, strong) NSViewController *currentViewController;
+
 @end
 
 @implementation WHMainWindowController
@@ -40,26 +44,6 @@
 {
     [super windowDidLoad];
     
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-    
-    //    self.fileManager = [NSFileManager defaultManager];
-    //    [[self.fileManager contentsOfDirectoryAtURL:self.workingFolder
-    //                     includingPropertiesForKeys:@[]
-    //                                        options:0 error:nil]
-    //     enumerateObjectsWithOptions:NSEnumerationConcurrent
-    //     usingBlock:^(id obj, NSUInteger idx, BOOL *stop)
-    //    {
-    //        NSURL *content = obj;
-    //        NSString *lastComponent = [content lastPathComponent];
-    //        if ([[content resourceValuesForKeys:@[NSURLIsDirectoryKey] error:nil][NSURLIsDirectoryKey] boolValue] == YES && [lastComponent length] == 32 && ![lastComponent containsString:@"00000000000000000000000000000000"])
-    //        {
-    //            [WHDBManager setDBPath:[content URLByAppendingPathComponent:@"DB/MM.sqlite"].path];
-    //            *stop = YES;
-    //        }
-    //    }];
-    
-    
-    [WHDBManager defaultManager];
     [[WHDeviceManager defaultManager] setDeviceDidAdded:^(WHDevice *device)
      {
          [device startAFCService];
@@ -78,11 +62,11 @@
     [self.sidebar addItemWithImage:[NSImage cellImageNamed:@"chat"] target:self action:@selector(showConversations:)];
     [self.sidebar addItemWithImage:[NSImage cellImageNamed:@"apple"] target:self action:@selector(showDevicePopover:)];
     
-    [self.redView.layer setBackgroundColor:[NSColor redColor].CGColor];
-    [self.yellowView.layer setBackgroundColor:[NSColor yellowColor].CGColor];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceDidAdd:) name:WHDeviceManagerDeviceDidAddNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceDidRemove:) name:WHDeviceManagerDeviceDidRemoveNotification object:nil];
+    
+    [self switchToContentViewController:[WHNoneDeviceViewController new]];
     
     
 }
@@ -103,6 +87,11 @@
     {
         self.currentUDID = [[[[WHDeviceManager defaultManager] currentDevices] allKeys] lastObject];
     }
+    
+    if (self.currentUDID == nil)
+    {
+        [self switchToContentViewController:[WHNoneDeviceViewController new]];
+    }
 }
 
 #pragma mark -
@@ -110,11 +99,16 @@
 - (IBAction)showContacts:(id)sender
 {
     NSLog(@"Show Contacts");
+    [self switchToContentViewController:[WHContactsViewController new]];
 }
 
 - (IBAction)showConversations:(id)sender
 {
     NSLog(@"Show conversations");
+    WHConversationListViewController *clvc = [WHConversationListViewController new];
+    [clvc setCurrentDevice:self.currentDevice];
+    [self switchToContentViewController:clvc];
+    [clvc loadConversations];
 }
 
 - (IBAction)showDevicePopover:(id)sender
@@ -134,46 +128,32 @@
     [popover showRelativeToRect:[sender cellFrameAtRow:[sender selectedRow] column:[sender selectedColumn]] ofView:sender preferredEdge:NSMaxXEdge];
 }
 
-- (IBAction)test:(id)sender
-{
-    //    [self switchToContentViewController:nil];
-    [self.currentDevice weixinWithHandler:^(WHApp *app)
-     {
-         NSLog(@"%hhd", [app copyfileAtPath:@"/Documents" completion:^(NSString *localPath)
-                         {
-                             NSLog(@"%@", localPath);
-                         }]);
-         
-     }];
-}
-
 - (void)switchToContentViewController:(NSViewController *)vc
 {
-    if ([self.redView superview])
+    if (vc != self.currentViewController)
     {
-        [self replaceView:self.redView withView:self.yellowView];
+        [self replaceView:self.currentViewController.view withView:vc.view];
     }
-    else
-    {
-        [self replaceView:self.yellowView withView:self.redView];
-    }
-    
+    self.currentViewController = vc;
 }
 
 - (void)replaceView:(NSView *)oldView withView:(NSView *)newView
 {
     [self.containerView addSubview:newView];
+    [oldView removeFromSuperview];
+    
+    [newView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.containerView bindSameSizeWithSubview:newView];
     
     CATransition *transition = [CATransition animation];
     [transition setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-    [transition setType:@"push"];
+    [transition setType:kCATransitionReveal];
     [transition setSubtype:kCATransitionFromLeft];
-    [transition setDuration:5];
+    [transition setDuration:.5];
     
     
-    [newView.layer addAnimation:transition forKey:@"transition"];
-    [oldView.layer addAnimation:transition forKey:@"transition"];
-    [oldView removeFromSuperview];
+    [self.containerView.layer addAnimation:transition forKey:@"transition"];
+    
 }
 
 - (WHDevice *)currentDevice

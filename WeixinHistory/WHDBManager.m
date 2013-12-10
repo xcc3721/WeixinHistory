@@ -11,13 +11,11 @@
 #import "WHContact.h"
 #import "WHConversation.h"
 
-static NSString *__dbpath = nil;
-
 @interface WHDBManager ()
 
 @property (nonatomic, copy) NSString *dbPath;
-@property (nonatomic, strong) NSArray *contacts;
-@property (nonatomic, strong) NSArray *conversations;
+
+
 @property (nonatomic, strong) FMDatabaseQueue *dbq;
 @end
 
@@ -29,29 +27,22 @@ static NSString *__dbpath = nil;
     static WHDBManager *manager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        manager = [[WHDBManager alloc] initWithDBPath:__dbpath];
+        manager = [[WHDBManager alloc] init];
     });
     return manager;
 }
 
-+ (void)setDBPath:(NSString *)path
+- (void)loadDatabase:(NSString *)dbpath
 {
-    __dbpath = [path copy];
-}
-
-- (id)initWithDBPath:(NSString *)path
-{
-    self = [super init];
-    if (self)
+    if (self.dbPath != dbpath)
     {
-        _dbPath = [path copy];
-        
-        self.dbq = [FMDatabaseQueue databaseQueueWithPath:path];
+        [self.dbq close];
+        self.dbPath = dbpath;
+        self.dbq = [FMDatabaseQueue databaseQueueWithPath:self.dbPath];
         
         [self queryAllFriends];
         [self queryAllConversation];
     }
-    return self;
 }
 
 - (void)queryAllFriends
@@ -89,26 +80,30 @@ static NSString *__dbpath = nil;
                  NSString *candidateName = set.resultDictionary[@"name"];
                  if ([candidateName hasPrefix:@"Chat_"])
                  {
-                     [conversationIds addObject:candidateName];
+                     [conversationIds addObject:[candidateName substringFromIndex:5]];
                  }
              }
          } while ([set hasAnotherRow]);
      }];
+
     
     NSMutableArray *conversations = [NSMutableArray array];
-    dispatch_apply([conversationIds count], dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(size_t idx)
+    dispatch_apply([self.contacts count], dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(size_t idx)
                    {
                        [self.dbq inDatabase:^(FMDatabase *db)
                         {
-                            NSString *conName = conversationIds[idx];
-                            FMResultSet *conversationSet = [db executeQuery:[NSString stringWithFormat:@"select * from %@ order by MesLocalID", conName]];
-                            WHConversation *con = [WHConversation conversationWithResult:conversationSet];
-                            [conversations addObject:con];
+                            WHContact *contact = self.contacts[idx];
+                            NSString *md5 = [contact userName].MD5Digest;
+                            if ([conversationIds containsObject:[contact userName].MD5Digest])
+                            {
+                                FMResultSet *conversationSet = [db executeQuery:[NSString stringWithFormat:@"select * from %@ order by MesLocalID", [NSString stringWithFormat:@"Chat_%@", md5]]];
+                                WHConversation *con = [WHConversation conversationWithResult:conversationSet];
+                                [con setContacts:@[contact]];
+                                [conversations addObject:con];
+                            }
                         }];
                    });
     self.conversations = [conversations copy];
-    NSLog(@"%@", conversations);
-    
 }
 
 @end

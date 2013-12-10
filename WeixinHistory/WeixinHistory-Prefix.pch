@@ -18,4 +18,6 @@
 #import "WHDevice+Weixin.h"
 #import "WHApp+Weixin.h"
 #import "NSDictionary+WHHelper.h"
+#import "NSView+WHAddtion.h"
+#import "WHDBManager.h"
 #endif

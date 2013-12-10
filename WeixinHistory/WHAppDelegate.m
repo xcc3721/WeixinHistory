@@ -8,7 +8,6 @@
 
 #import "WHAppDelegate.h"
 #import "WHMainWindowController.h"
-#import "WHChooseFolderWindowController.h"
 #import "WHDeviceManager.h"
 
 
@@ -24,12 +23,8 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
-//    self.chooseFolderWC = [WHChooseFolderWindowController new];
-//    [self.chooseFolderWC.window makeKeyAndOrderFront:nil];
     self.mainWC = [[WHMainWindowController alloc] init];
     [self.mainWC.window makeKeyAndOrderFront:nil];
-    
-    [WHDeviceManager defaultManager];
 }
 
 @end

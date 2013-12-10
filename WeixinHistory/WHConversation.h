@@ -12,6 +12,8 @@
 
 + (instancetype)conversationWithResult:(FMResultSet *)set;
 
+
+@property (nonatomic, strong) NSArray *contacts;
 @property (readonly) NSArray *messages;
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "WHBaseViewController.h"
 
-@interface WHContactsViewController : NSViewController
+@interface WHContactsViewController : WHBaseViewController
 
 @end

@@ -114,7 +114,6 @@
     {
         NSLog(@"AFC Service Started!");
         [self getDeviceInfo];
-        NSLog(@"%@", [WHAfcHelper contentsOfDirectory:@"/private" afc:devafc]);
     }
     else
     {
