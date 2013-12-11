@@ -10,5 +10,6 @@
 
 int main(int argc, const char * argv[])
 {
+    [NSViewController px_installViewControllerSupport];
     return NSApplicationMain(argc, argv);
 }

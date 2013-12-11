@@ -15,21 +15,21 @@
         <customObject id="-3" userLabel="Application"/>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <rect key="contentRect" x="196" y="240" width="683" height="426"/>
+            <rect key="contentRect" x="196" y="240" width="599" height="500"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
             <view key="contentView" wantsLayer="YES" id="2">
-                <rect key="frame" x="0.0" y="0.0" width="683" height="426"/>
+                <rect key="frame" x="0.0" y="0.0" width="599" height="500"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView wantsLayer="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aG2-LG-CYu">
-                        <rect key="frame" x="-1" y="-1" width="100" height="428"/>
+                        <rect key="frame" x="-1" y="-1" width="100" height="502"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" id="qA6-9O-NJl">
-                            <rect key="frame" x="1" y="1" width="98" height="426"/>
+                            <rect key="frame" x="1" y="1" width="98" height="500"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <view translatesAutoresizingMaskIntoConstraints="NO" id="oMQ-rg-ZsS" customClass="ITSidebar">
-                                    <rect key="frame" x="0.0" y="0.0" width="98" height="426"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="98" height="500"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                             </subviews>
@@ -44,17 +44,21 @@
                             <constraint firstAttribute="width" constant="100" id="sfh-6j-ts7"/>
                         </constraints>
                         <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="gN8-7U-6qz">
-                            <rect key="frame" x="1" y="411" width="98" height="16"/>
+                            <rect key="frame" x="1" y="485" width="98" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="e9B-mD-gJI">
-                            <rect key="frame" x="84" y="1" width="15" height="426"/>
+                            <rect key="frame" x="83" y="1" width="16" height="500"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
                     <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VUG-R8-cOh" userLabel="ContainerView">
-                        <rect key="frame" x="99" y="0.0" width="584" height="426"/>
+                        <rect key="frame" x="99" y="0.0" width="500" height="500"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="500" id="ZSS-jB-Zvb"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="500" id="rDF-LH-hh7"/>
+                        </constraints>
                     </customView>
                 </subviews>
                 <constraints>

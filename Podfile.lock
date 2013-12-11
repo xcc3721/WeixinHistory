@@ -13,6 +13,9 @@ PODS:
   - libplist (1.0.0)
   - MD5Digest (0.1.0)
   - ObjectiveSugar (0.9)
+  - Rebel (0.3.2):
+    - Rebel/NSColorExtensions
+  - Rebel/NSColorExtensions (0.3.2)
   - usbmuxd (1.0.0):
     - libplist
   - XMLReader (0.0.2)
@@ -25,6 +28,7 @@ DEPENDENCIES:
   - libimobiledevice
   - MD5Digest
   - ObjectiveSugar
+  - Rebel
   - XMLReader
 
 SPEC CHECKSUMS:
@@ -36,6 +40,7 @@ SPEC CHECKSUMS:
   libplist: 5e958bf17dab7112166a09f6a37e4746ceae5627
   MD5Digest: 355c8733ab522cc516a4047e2d93e2b842947b18
   ObjectiveSugar: 81337e36790b5a157ee6ccdcf65c91393ca5d900
+  Rebel: 62fb32b3b4c06ce3d73e226f7d8fc51ad1b70d10
   usbmuxd: 660f430a761eeed896c3434993f48b0bf057953a
   XMLReader: d8a522b0362140b328bcaec7f289ff4ffffebf29
 

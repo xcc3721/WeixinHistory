@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F14A97E1858B5510085DF23 /* Photon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F14A97C1858B2F90085DF23 /* Photon.framework */; };
+		5F14A97F1858B55C0085DF23 /* Photon.framework in Resources */ = {isa = PBXBuildFile; fileRef = 5F14A97C1858B2F90085DF23 /* Photon.framework */; };
+		5F14A9831858B7400085DF23 /* WHUserFolderSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F14A9811858B7400085DF23 /* WHUserFolderSelectViewController.m */; };
+		5F14A9841858B7400085DF23 /* WHUserFolderSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F14A9821858B7400085DF23 /* WHUserFolderSelectViewController.xib */; };
 		5F3D9E0D1855FA8E0004E9E2 /* WHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D9E0B1855FA8E0004E9E2 /* WHBaseViewController.m */; };
 		5F3D9E0E1855FA8E0004E9E2 /* WHBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F3D9E0C1855FA8E0004E9E2 /* WHBaseViewController.xib */; };
 		5F3D9E121855FB060004E9E2 /* WHDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D9E101855FB060004E9E2 /* WHDeviceViewController.m */; };
@@ -53,6 +57,8 @@
 		5FCD5D3A1857636C007EB3E9 /* WHNoneDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FCD5D381857636C007EB3E9 /* WHNoneDeviceViewController.xib */; };
 		5FEB312C1844FF040064B200 /* NSAlert+Popover.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEB312B1844FF040064B200 /* NSAlert+Popover.m */; };
 		5FEB312E184505890064B200 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEB312D184505890064B200 /* QuartzCore.framework */; };
+		5FFD54F01858D05500F259B6 /* WHConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD54EE1858D05500F259B6 /* WHConversationViewController.m */; };
+		5FFD54F11858D05500F259B6 /* WHConversationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FFD54EF1858D05500F259B6 /* WHConversationViewController.xib */; };
 		D3480C47DECB4385AC5A0F00 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DAE191368C54FD5B3AD8ED4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +73,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F14A97C1858B2F90085DF23 /* Photon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Photon.framework; sourceTree = "<group>"; };
+		5F14A9801858B7400085DF23 /* WHUserFolderSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHUserFolderSelectViewController.h; sourceTree = "<group>"; };
+		5F14A9811858B7400085DF23 /* WHUserFolderSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHUserFolderSelectViewController.m; sourceTree = "<group>"; };
+		5F14A9821858B7400085DF23 /* WHUserFolderSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHUserFolderSelectViewController.xib; sourceTree = "<group>"; };
 		5F3D9E0A1855FA8E0004E9E2 /* WHBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHBaseViewController.h; sourceTree = "<group>"; };
 		5F3D9E0B1855FA8E0004E9E2 /* WHBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHBaseViewController.m; sourceTree = "<group>"; };
 		5F3D9E0C1855FA8E0004E9E2 /* WHBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHBaseViewController.xib; sourceTree = "<group>"; };
@@ -146,6 +156,9 @@
 		5FEB312A1844FF040064B200 /* NSAlert+Popover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAlert+Popover.h"; sourceTree = "<group>"; };
 		5FEB312B1844FF040064B200 /* NSAlert+Popover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAlert+Popover.m"; sourceTree = "<group>"; };
 		5FEB312D184505890064B200 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5FFD54ED1858D05500F259B6 /* WHConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHConversationViewController.h; sourceTree = "<group>"; };
+		5FFD54EE1858D05500F259B6 /* WHConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHConversationViewController.m; sourceTree = "<group>"; };
+		5FFD54EF1858D05500F259B6 /* WHConversationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHConversationViewController.xib; sourceTree = "<group>"; };
 		6DAE191368C54FD5B3AD8ED4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF1E3E8C28AC4D699B65D9DD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F944B1418545F80000A791D /* libcrypto.dylib in Frameworks */,
+				5F14A97E1858B5510085DF23 /* Photon.framework in Frameworks */,
 				5F944B1218545E75000A791D /* Security.framework in Frameworks */,
 				5F944B0E18545E2E000A791D /* libssl.dylib in Frameworks */,
 				5FEB312E184505890064B200 /* QuartzCore.framework in Frameworks */,
@@ -207,6 +221,12 @@
 				5F3D9E111855FB060004E9E2 /* WHDeviceViewController.xib */,
 				5F3D9E14185600960004E9E2 /* WHDeviceTableViewCell.h */,
 				5F3D9E15185600960004E9E2 /* WHDeviceTableViewCell.m */,
+				5F14A9801858B7400085DF23 /* WHUserFolderSelectViewController.h */,
+				5F14A9811858B7400085DF23 /* WHUserFolderSelectViewController.m */,
+				5F14A9821858B7400085DF23 /* WHUserFolderSelectViewController.xib */,
+				5FFD54ED1858D05500F259B6 /* WHConversationViewController.h */,
+				5FFD54EE1858D05500F259B6 /* WHConversationViewController.m */,
+				5FFD54EF1858D05500F259B6 /* WHConversationViewController.xib */,
 			);
 			name = MainWindow;
 			sourceTree = "<group>";
@@ -253,6 +273,7 @@
 		5F4378911844EB9B00B5ADFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F14A97C1858B2F90085DF23 /* Photon.framework */,
 				5F944B1318545F80000A791D /* libcrypto.dylib */,
 				5F944B1118545E75000A791D /* Security.framework */,
 				5F944B0F18545E42000A791D /* libssl.0.9.8.dylib */,
@@ -454,16 +475,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F14A97F1858B55C0085DF23 /* Photon.framework in Resources */,
 				5FCD5D3518576263007EB3E9 /* WHConversationListViewController.xib in Resources */,
 				5F3D9E0E1855FA8E0004E9E2 /* WHBaseViewController.xib in Resources */,
 				5F43789D1844EB9B00B5ADFC /* InfoPlist.strings in Resources */,
 				5F4378CF1844EC7100B5ADFC /* WHMainWindowController.xib in Resources */,
 				5F3D9E131855FB060004E9E2 /* WHDeviceViewController.xib in Resources */,
 				5F409F8E185342CE007EB9CD /* WHContactsViewController.xib in Resources */,
+				5F14A9841858B7400085DF23 /* WHUserFolderSelectViewController.xib in Resources */,
 				5F4378AB1844EB9B00B5ADFC /* Images.xcassets in Resources */,
 				5F4378CA1844EBCD00B5ADFC /* WHBaseWindowController.xib in Resources */,
 				5F4378A31844EB9B00B5ADFC /* Credits.rtf in Resources */,
 				5FCD5D3A1857636C007EB3E9 /* WHNoneDeviceViewController.xib in Resources */,
+				5FFD54F11858D05500F259B6 /* WHConversationViewController.xib in Resources */,
 				5F4378A91844EB9B00B5ADFC /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,6 +546,7 @@
 				5FC908E61854D56E00062006 /* NSString+WHHelper.m in Sources */,
 				5FB822A2184B336600FEB020 /* WHContact.m in Sources */,
 				5F3D9E121855FB060004E9E2 /* WHDeviceViewController.m in Sources */,
+				5FFD54F01858D05500F259B6 /* WHConversationViewController.m in Sources */,
 				5F3D9E16185600960004E9E2 /* WHDeviceTableViewCell.m in Sources */,
 				5FC908EC1854DBAA00062006 /* WHAfcHelper.m in Sources */,
 				5FCD5D3418576263007EB3E9 /* WHConversationListViewController.m in Sources */,
@@ -532,6 +557,7 @@
 				5F409F881853212C007EB9CD /* NSImage+Resize.m in Sources */,
 				5FC908E91854D5D400062006 /* NSDictionary+WHHelper.m in Sources */,
 				5F3D9E1C18561CAA0004E9E2 /* WHDevice+Weixin.m in Sources */,
+				5F14A9831858B7400085DF23 /* WHUserFolderSelectViewController.m in Sources */,
 				5F409F9218538448007EB9CD /* WHDeviceManager.m in Sources */,
 				5F4378A61844EB9B00B5ADFC /* WHAppDelegate.m in Sources */,
 				5F3D9E1F18561F410004E9E2 /* WHApp+Weixin.m in Sources */,
@@ -673,6 +699,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/XCC/Workspace/WeixinHistory,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeixinHistory/WeixinHistory-Prefix.pch";
 				INFOPLIST_FILE = "WeixinHistory/WeixinHistory-Info.plist";
@@ -687,6 +717,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/XCC/Workspace/WeixinHistory,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeixinHistory/WeixinHistory-Prefix.pch";
 				INFOPLIST_FILE = "WeixinHistory/WeixinHistory-Info.plist";

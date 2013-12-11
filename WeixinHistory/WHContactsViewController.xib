@@ -16,24 +16,20 @@
             <rect key="frame" x="0.0" y="0.0" width="617" height="392"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ak2-WO-BjP">
-                    <rect key="frame" x="193" y="136" width="231" height="121"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ak2-WO-BjP">
+                    <rect key="frame" x="225" y="173" width="168" height="46"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Contacts" id="gaW-0v-g3v">
-                        <font key="font" metaFont="system" size="37"/>
+                        <font key="font" metaFont="system" size="38"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
             </subviews>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="ak2-WO-BjP" secondAttribute="centerY" id="IOG-fx-TRK"/>
+                <constraint firstAttribute="centerX" secondItem="ak2-WO-BjP" secondAttribute="centerX" id="pjI-8D-IDi"/>
+            </constraints>
         </customView>
-        <button verticalHuggingPriority="750" id="8Vd-If-SEr">
-            <rect key="frame" x="0.0" y="0.0" width="82" height="32"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GQx-BW-5me">
-                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                <font key="font" metaFont="system"/>
-            </buttonCell>
-        </button>
     </objects>
 </document>

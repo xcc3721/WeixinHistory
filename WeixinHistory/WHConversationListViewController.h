@@ -11,6 +11,7 @@
 @interface WHConversationListViewController : WHBaseViewController
 
 @property (nonatomic, strong) WHDevice *currentDevice;
+@property (nonatomic, copy) NSString *userPath;
 
 
 - (void)loadConversations;

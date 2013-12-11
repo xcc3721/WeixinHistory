@@ -21,6 +21,7 @@
 @property (weak) IBOutlet ITSidebar *sidebar;
 @property (nonatomic, weak) NSFileManager *fileManager;
 @property (nonatomic, strong) NSViewController *currentViewController;
+@property (nonatomic, copy) NSString *userPath;
 
 @end
 
@@ -58,8 +59,6 @@
     
     [self.sidebar setCellSize:NSMakeSize(100, 80)];
     
-    [self.sidebar addItemWithImage:[NSImage cellImageNamed:@"contacts"] target:self action:@selector(showContacts:)];
-    [self.sidebar addItemWithImage:[NSImage cellImageNamed:@"chat"] target:self action:@selector(showConversations:)];
     [self.sidebar addItemWithImage:[NSImage cellImageNamed:@"apple"] target:self action:@selector(showDevicePopover:)];
     
     
@@ -99,32 +98,63 @@
 - (IBAction)showContacts:(id)sender
 {
     NSLog(@"Show Contacts");
-    [self switchToContentViewController:[WHContactsViewController new]];
+    if (self.currentUDID)
+    {
+        [self switchToContentViewController:[WHContactsViewController new]];
+    }
+    else
+    {
+        [self switchToContentViewController:[WHNoneDeviceViewController new]];
+    }
 }
 
 - (IBAction)showConversations:(id)sender
 {
     NSLog(@"Show conversations");
-    WHConversationListViewController *clvc = [WHConversationListViewController new];
-    [clvc setCurrentDevice:self.currentDevice];
-    [self switchToContentViewController:clvc];
-    [clvc loadConversations];
+    if (self.currentUDID)
+    {
+        WHConversationListViewController *clvc = [WHConversationListViewController new];
+        [clvc setCurrentDevice:self.currentDevice];
+        [clvc setUserPath:self.userPath];
+        
+        PXNavigationController *nc = [[PXNavigationController alloc] initWithRootViewController:clvc];
+        
+        [self switchToContentViewController:nc];
+    }
+    else
+    {
+        [self switchToContentViewController:[WHNoneDeviceViewController new]];
+    }
 }
 
 - (IBAction)showDevicePopover:(id)sender
 {
     NSPopover *popover = [[NSPopover alloc] init];
     [popover setBehavior:NSPopoverBehaviorTransient];
-    [popover setAppearance:NSPopoverAppearanceHUD];
+    
     WHDeviceViewController *vc = [WHDeviceViewController new];
     [popover setDelegate:self];
-    [popover setContentViewController:vc];
-    [vc setDidSelectDevice:^(WHDevice *device)
+    [vc setDidSelectDevice:^(WHDevice *device, NSString *userPath)
      {
          self.currentUDID = device.udid;
+         self.userPath = userPath;
+         
+         if ([self.sidebar.matrix numberOfRows] == 1)
+         {
+             [self.sidebar addItemWithImage:[NSImage cellImageNamed:@"contacts"] target:self action:@selector(showContacts:)];
+             [self.sidebar addItemWithImage:[NSImage cellImageNamed:@"chat"] target:self action:@selector(showConversations:)];
+         }
+         
+         
+         [self.sidebar.matrix selectCellAtRow:2 column:0];
+         [self showConversations:sender];
+         
+         
+         
          [popover performClose:sender];
      }];
-    
+    PXNavigationController *nc = [[PXNavigationController alloc] initWithRootViewController:vc];
+    popover.contentViewController = nc;
     [popover showRelativeToRect:[sender cellFrameAtRow:[sender selectedRow] column:[sender selectedColumn]] ofView:sender preferredEdge:NSMaxXEdge];
 }
 

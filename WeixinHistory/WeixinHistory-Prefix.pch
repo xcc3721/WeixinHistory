@@ -20,4 +20,7 @@
 #import "NSDictionary+WHHelper.h"
 #import "NSView+WHAddtion.h"
 #import "WHDBManager.h"
+#import <Photon/Photon.h>
+#import "Rebel.h"
+#import "XMLReader.h"
 #endif

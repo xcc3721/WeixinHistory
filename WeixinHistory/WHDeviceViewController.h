@@ -12,6 +12,6 @@
 @property (weak) IBOutlet NSTableView *tableView;
 
 
-@property (nonatomic, strong) void(^didSelectDevice)(WHDevice *device);
+@property (nonatomic, strong) void(^didSelectDevice)(WHDevice *device, NSString *userPath);
 
 @end

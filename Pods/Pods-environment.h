@@ -54,6 +54,18 @@
 #define COCOAPODS_VERSION_MINOR_ObjectiveSugar 9
 #define COCOAPODS_VERSION_PATCH_ObjectiveSugar 0
 
+// Rebel
+#define COCOAPODS_POD_AVAILABLE_Rebel
+#define COCOAPODS_VERSION_MAJOR_Rebel 0
+#define COCOAPODS_VERSION_MINOR_Rebel 3
+#define COCOAPODS_VERSION_PATCH_Rebel 2
+
+// Rebel/NSColorExtensions
+#define COCOAPODS_POD_AVAILABLE_Rebel_NSColorExtensions
+#define COCOAPODS_VERSION_MAJOR_Rebel_NSColorExtensions 0
+#define COCOAPODS_VERSION_MINOR_Rebel_NSColorExtensions 3
+#define COCOAPODS_VERSION_PATCH_Rebel_NSColorExtensions 2
+
 // XMLReader
 #define COCOAPODS_POD_AVAILABLE_XMLReader
 #define COCOAPODS_VERSION_MAJOR_XMLReader 0

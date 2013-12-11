@@ -6,4 +6,4 @@ pod 'XMLReader'
 pod 'MD5Digest'
 pod 'ITSidebar'
 pod 'libimobiledevice'
-
+pod 'Rebel'
