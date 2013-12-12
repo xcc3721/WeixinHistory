@@ -9,8 +9,11 @@
 #import "WHTextMessageCellView.h"
 @interface WHTextMessageCellView ()
 
+<<<<<<< HEAD
 @property (weak) IBOutlet NSLayoutConstraint *leftConstraint;
 @property (weak) IBOutlet NSLayoutConstraint *rightConstraint;
+=======
+>>>>>>> 1f782499d2601392684bcc6ec64e252ef27507e9
 @property (weak) IBOutlet PXLabel *textLabel;
 
 @end
@@ -55,7 +58,6 @@
         [self.textLabel setTextAlignment:NSRightTextAlignment];
         
     }
-    [self.textLabel setText:message.message];
 }
 
 

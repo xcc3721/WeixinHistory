@@ -60,7 +60,6 @@
     NSRect rect = [message.message boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [NSFont fontWithName:@"Helvetica" size:11.0]}];
     CGFloat height = NSHeight(rect);
     return height;
-//    return 80;
 }
 
 - (void)viewDidAppear:(BOOL)animated
