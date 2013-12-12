@@ -14,6 +14,7 @@
 #import "WHContactsViewController.h"
 #import "WHConversationListViewController.h"
 #import "WHNoneDeviceViewController.h"
+#import "WHGuideDeviceViewController.h"
 
 @interface WHMainWindowController () <NSPopoverDelegate>
 
@@ -75,7 +76,7 @@
 {
     if (self.currentUDID == nil)
     {
-        self.currentUDID = [notification.userInfo[WHDeviceKey] udid];
+        [self switchToContentViewController:[WHGuideDeviceViewController new]];
     }
 }
 
@@ -84,16 +85,29 @@
     WHDevice *device = notification.userInfo[WHDeviceKey];
     if ([self currentUDID] == [device udid])
     {
-        self.currentUDID = [[[[WHDeviceManager defaultManager] currentDevices] allKeys] lastObject];
+        self.currentUDID = nil;
     }
-    
-    if (self.currentUDID == nil)
+    [self handleLosingCurrentDevice];
+}
+
+#pragma mark -
+
+- (void)handleLosingCurrentDevice
+{
+    if ([self.sidebar.matrix numberOfRows] > 1)
+    {
+        [self.sidebar.matrix removeRow:2];
+        [self.sidebar.matrix removeRow:1];
+    }
+    if ([[[WHDeviceManager defaultManager] currentDevices] count])
+    {
+        [self switchToContentViewController:[WHGuideDeviceViewController new]];
+    }
+    else
     {
         [self switchToContentViewController:[WHNoneDeviceViewController new]];
     }
 }
-
-#pragma mark -
 
 - (IBAction)showContacts:(id)sender
 {
@@ -104,7 +118,7 @@
     }
     else
     {
-        [self switchToContentViewController:[WHNoneDeviceViewController new]];
+        [self handleLosingCurrentDevice];
     }
 }
 
@@ -123,7 +137,7 @@
     }
     else
     {
-        [self switchToContentViewController:[WHNoneDeviceViewController new]];
+        [self handleLosingCurrentDevice];
     }
 }
 

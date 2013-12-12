@@ -18,6 +18,11 @@
 		5F3D9E16185600960004E9E2 /* WHDeviceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D9E15185600960004E9E2 /* WHDeviceTableViewCell.m */; };
 		5F3D9E1C18561CAA0004E9E2 /* WHDevice+Weixin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D9E1B18561CAA0004E9E2 /* WHDevice+Weixin.m */; };
 		5F3D9E1F18561F410004E9E2 /* WHApp+Weixin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D9E1E18561F410004E9E2 /* WHApp+Weixin.m */; };
+		5F3DBF8B1859EAE9004F2E12 /* WHGuideDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3DBF891859EAE9004F2E12 /* WHGuideDeviceViewController.m */; };
+		5F3DBF8C1859EAE9004F2E12 /* WHGuideDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F3DBF8A1859EAE9004F2E12 /* WHGuideDeviceViewController.xib */; };
+		5F3DBF94185A0D1E004F2E12 /* WHMessageCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3DBF93185A0D1E004F2E12 /* WHMessageCellView.m */; };
+		5F3DBF97185A0FCD004F2E12 /* WHTextMessageCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3DBF96185A0FCD004F2E12 /* WHTextMessageCellView.m */; };
+		5F3DBF99185A10D3004F2E12 /* WHTextMessageCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F3DBF98185A10D3004F2E12 /* WHTextMessageCellView.xib */; };
 		5F409F881853212C007EB9CD /* NSImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F409F871853212C007EB9CD /* NSImage+Resize.m */; };
 		5F409F8D185342CE007EB9CD /* WHContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F409F8B185342CE007EB9CD /* WHContactsViewController.m */; };
 		5F409F8E185342CE007EB9CD /* WHContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F409F8C185342CE007EB9CD /* WHContactsViewController.xib */; };
@@ -89,6 +94,14 @@
 		5F3D9E1B18561CAA0004E9E2 /* WHDevice+Weixin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WHDevice+Weixin.m"; sourceTree = "<group>"; };
 		5F3D9E1D18561F410004E9E2 /* WHApp+Weixin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WHApp+Weixin.h"; sourceTree = "<group>"; };
 		5F3D9E1E18561F410004E9E2 /* WHApp+Weixin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WHApp+Weixin.m"; sourceTree = "<group>"; };
+		5F3DBF881859EAE9004F2E12 /* WHGuideDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHGuideDeviceViewController.h; sourceTree = "<group>"; };
+		5F3DBF891859EAE9004F2E12 /* WHGuideDeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHGuideDeviceViewController.m; sourceTree = "<group>"; };
+		5F3DBF8A1859EAE9004F2E12 /* WHGuideDeviceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHGuideDeviceViewController.xib; sourceTree = "<group>"; };
+		5F3DBF92185A0D1E004F2E12 /* WHMessageCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHMessageCellView.h; sourceTree = "<group>"; };
+		5F3DBF93185A0D1E004F2E12 /* WHMessageCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHMessageCellView.m; sourceTree = "<group>"; };
+		5F3DBF95185A0FCD004F2E12 /* WHTextMessageCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHTextMessageCellView.h; sourceTree = "<group>"; };
+		5F3DBF96185A0FCD004F2E12 /* WHTextMessageCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHTextMessageCellView.m; sourceTree = "<group>"; };
+		5F3DBF98185A10D3004F2E12 /* WHTextMessageCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHTextMessageCellView.xib; sourceTree = "<group>"; };
 		5F409F861853212C007EB9CD /* NSImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Resize.h"; sourceTree = "<group>"; };
 		5F409F871853212C007EB9CD /* NSImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Resize.m"; sourceTree = "<group>"; };
 		5F409F8A185342CE007EB9CD /* WHContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHContactsViewController.h; sourceTree = "<group>"; };
@@ -201,6 +214,21 @@
 			name = Weixin;
 			sourceTree = "<group>";
 		};
+		5F3DBF91185A0CA5004F2E12 /* Conversation */ = {
+			isa = PBXGroup;
+			children = (
+				5FFD54ED1858D05500F259B6 /* WHConversationViewController.h */,
+				5FFD54EE1858D05500F259B6 /* WHConversationViewController.m */,
+				5FFD54EF1858D05500F259B6 /* WHConversationViewController.xib */,
+				5F3DBF92185A0D1E004F2E12 /* WHMessageCellView.h */,
+				5F3DBF93185A0D1E004F2E12 /* WHMessageCellView.m */,
+				5F3DBF95185A0FCD004F2E12 /* WHTextMessageCellView.h */,
+				5F3DBF96185A0FCD004F2E12 /* WHTextMessageCellView.m */,
+				5F3DBF98185A10D3004F2E12 /* WHTextMessageCellView.xib */,
+			);
+			name = Conversation;
+			sourceTree = "<group>";
+		};
 		5F409F8918532DE8007EB9CD /* MainWindow */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +244,9 @@
 				5FCD5D361857636C007EB3E9 /* WHNoneDeviceViewController.h */,
 				5FCD5D371857636C007EB3E9 /* WHNoneDeviceViewController.m */,
 				5FCD5D381857636C007EB3E9 /* WHNoneDeviceViewController.xib */,
+				5F3DBF881859EAE9004F2E12 /* WHGuideDeviceViewController.h */,
+				5F3DBF891859EAE9004F2E12 /* WHGuideDeviceViewController.m */,
+				5F3DBF8A1859EAE9004F2E12 /* WHGuideDeviceViewController.xib */,
 				5F3D9E0F1855FB060004E9E2 /* WHDeviceViewController.h */,
 				5F3D9E101855FB060004E9E2 /* WHDeviceViewController.m */,
 				5F3D9E111855FB060004E9E2 /* WHDeviceViewController.xib */,
@@ -224,9 +255,7 @@
 				5F14A9801858B7400085DF23 /* WHUserFolderSelectViewController.h */,
 				5F14A9811858B7400085DF23 /* WHUserFolderSelectViewController.m */,
 				5F14A9821858B7400085DF23 /* WHUserFolderSelectViewController.xib */,
-				5FFD54ED1858D05500F259B6 /* WHConversationViewController.h */,
-				5FFD54EE1858D05500F259B6 /* WHConversationViewController.m */,
-				5FFD54EF1858D05500F259B6 /* WHConversationViewController.xib */,
+				5F3DBF91185A0CA5004F2E12 /* Conversation */,
 			);
 			name = MainWindow;
 			sourceTree = "<group>";
@@ -478,6 +507,7 @@
 				5FCD5D3518576263007EB3E9 /* WHConversationListViewController.xib in Resources */,
 				5F3D9E0E1855FA8E0004E9E2 /* WHBaseViewController.xib in Resources */,
 				5F43789D1844EB9B00B5ADFC /* InfoPlist.strings in Resources */,
+				5F3DBF8C1859EAE9004F2E12 /* WHGuideDeviceViewController.xib in Resources */,
 				5F4378CF1844EC7100B5ADFC /* WHMainWindowController.xib in Resources */,
 				1C560618185976A4009450B7 /* Photon.framework in Resources */,
 				5F3D9E131855FB060004E9E2 /* WHDeviceViewController.xib in Resources */,
@@ -488,6 +518,7 @@
 				5F4378A31844EB9B00B5ADFC /* Credits.rtf in Resources */,
 				5FCD5D3A1857636C007EB3E9 /* WHNoneDeviceViewController.xib in Resources */,
 				5FFD54F11858D05500F259B6 /* WHConversationViewController.xib in Resources */,
+				5F3DBF99185A10D3004F2E12 /* WHTextMessageCellView.xib in Resources */,
 				5F4378A91844EB9B00B5ADFC /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,12 +581,14 @@
 				5F3D9E16185600960004E9E2 /* WHDeviceTableViewCell.m in Sources */,
 				5FC908EC1854DBAA00062006 /* WHAfcHelper.m in Sources */,
 				5FCD5D3418576263007EB3E9 /* WHConversationListViewController.m in Sources */,
+				5F3DBF8B1859EAE9004F2E12 /* WHGuideDeviceViewController.m in Sources */,
 				5F409F9518538C11007EB9CD /* WHDevice.m in Sources */,
 				5F4378C91844EBCD00B5ADFC /* WHBaseWindowController.m in Sources */,
 				5FCD5D391857636C007EB3E9 /* WHNoneDeviceViewController.m in Sources */,
 				5F409F8D185342CE007EB9CD /* WHContactsViewController.m in Sources */,
 				5F409F881853212C007EB9CD /* NSImage+Resize.m in Sources */,
 				5FC908E91854D5D400062006 /* NSDictionary+WHHelper.m in Sources */,
+				5F3DBF94185A0D1E004F2E12 /* WHMessageCellView.m in Sources */,
 				5F3D9E1C18561CAA0004E9E2 /* WHDevice+Weixin.m in Sources */,
 				5F14A9831858B7400085DF23 /* WHUserFolderSelectViewController.m in Sources */,
 				5F409F9218538448007EB9CD /* WHDeviceManager.m in Sources */,
@@ -566,6 +599,7 @@
 				5FB822A8184B9E4F00FEB020 /* WHMessage.m in Sources */,
 				5FCD5D3018575FA0007EB3E9 /* NSView+WHAddtion.m in Sources */,
 				5FB822A5184B9CDA00FEB020 /* WHConversation.m in Sources */,
+				5F3DBF97185A0FCD004F2E12 /* WHTextMessageCellView.m in Sources */,
 				5F4378CE1844EC7100B5ADFC /* WHMainWindowController.m in Sources */,
 				5F3D9E0D1855FA8E0004E9E2 /* WHBaseViewController.m in Sources */,
 			);
@@ -701,8 +735,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/XCC/Workspace/WeixinHistory/**",
-					/Users/erick_xi/Workspace/WeixinHistory,
+					"$(SRCROOT)/",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeixinHistory/WeixinHistory-Prefix.pch";
@@ -720,8 +753,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/XCC/Workspace/WeixinHistory/**",
-					/Users/erick_xi/Workspace/WeixinHistory,
+					"$(SRCROOT)/",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeixinHistory/WeixinHistory-Prefix.pch";

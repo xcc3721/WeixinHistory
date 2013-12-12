@@ -82,11 +82,14 @@ void DeviceEventCallBack(const idevice_event_t *event, void *user_data)
     [device connect];
     self.devices[device.udid] = device;
     NSLog(@"Device Registed For Device:%@", device);
-    [[NSNotificationCenter defaultCenter] postNotificationName:WHDeviceManagerDeviceDidAddNotification object:nil userInfo:@{WHDeviceKey : device}];
-    if (self.deviceDidAdded)
+    dispatch_async(dispatch_get_main_queue(), ^
     {
-        self.deviceDidAdded(device);
-    }
+        [[NSNotificationCenter defaultCenter] postNotificationName:WHDeviceManagerDeviceDidAddNotification object:nil userInfo:@{WHDeviceKey : device}];
+        if (self.deviceDidAdded)
+        {
+            self.deviceDidAdded(device);
+        }
+    });
 }
 
 - (void)unregisterDevice:(WHDevice *)device
@@ -102,11 +105,14 @@ void DeviceEventCallBack(const idevice_event_t *event, void *user_data)
         [device disconnect];
         NSLog(@"Device Unregisted:%@", device);
         [self.devices removeObjectForKey:udid];
-        [[NSNotificationCenter defaultCenter] postNotificationName:WHDeviceManagerDeviceDidRemoveNotification object:nil userInfo:@{WHDeviceKey : device}];
-        if (self.deviceDidRemoved)
+        dispatch_async(dispatch_get_main_queue(), ^
         {
-            self.deviceDidRemoved(device);
-        }
+            [[NSNotificationCenter defaultCenter] postNotificationName:WHDeviceManagerDeviceDidRemoveNotification object:nil userInfo:@{WHDeviceKey : device}];
+            if (self.deviceDidRemoved)
+            {
+                self.deviceDidRemoved(device);
+            }
+        });
     }
 }
 
