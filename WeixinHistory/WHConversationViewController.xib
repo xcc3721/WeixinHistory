@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A598" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment version="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -17,21 +17,21 @@
             <rect key="frame" x="0.0" y="0.0" width="556" height="400"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <scrollView autohidesScrollers="YES" horizontalLineScroll="52" horizontalPageScroll="10" verticalLineScroll="52" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rh5-kS-g89">
+                <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rh5-kS-g89">
                     <rect key="frame" x="0.0" y="0.0" width="556" height="400"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <clipView key="contentView" id="tON-QF-bQM">
                         <rect key="frame" x="1" y="1" width="554" height="398"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="50" rowSizeStyle="automatic" viewBased="YES" id="Ey7-XD-eNd">
+                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="Ey7-XD-eNd">
                                 <rect key="frame" x="0.0" y="0.0" width="554" height="398"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn width="551" minWidth="40" maxWidth="1000" id="SYH-IA-qXG">
+                                    <tableColumn width="551" minWidth="40" maxWidth="99996" id="SYH-IA-qXG">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -42,7 +42,7 @@
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
-                                        <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                        <tableColumnResizingMask key="resizingMask" resizeWithTable="YES"/>
                                         <prototypeCellViews>
                                             <tableCellView identifier="Message" id="pwA-gc-0Co">
                                                 <rect key="frame" x="1" y="1" width="551" height="50"/>
@@ -79,7 +79,7 @@
                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </clipView>
                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="iqU-g8-bbI">
-                        <rect key="frame" x="1" y="1" width="0.0" height="16"/>
+                        <rect key="frame" x="1" y="383" width="554" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="GqZ-RI-Gqq">
@@ -89,10 +89,10 @@
                 </scrollView>
             </subviews>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="rh5-kS-g89" secondAttribute="trailing" id="6yD-Mc-gj5"/>
-                <constraint firstAttribute="bottom" secondItem="rh5-kS-g89" secondAttribute="bottom" id="X3x-zI-OZU"/>
-                <constraint firstItem="rh5-kS-g89" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="d29-fe-jch"/>
-                <constraint firstItem="rh5-kS-g89" firstAttribute="top" secondItem="1" secondAttribute="top" id="tky-ED-IDg"/>
+                <constraint firstItem="rh5-kS-g89" firstAttribute="top" secondItem="1" secondAttribute="top" id="1mr-jG-1yq"/>
+                <constraint firstAttribute="bottom" secondItem="rh5-kS-g89" secondAttribute="bottom" id="A2G-Nf-Oja"/>
+                <constraint firstAttribute="trailing" secondItem="rh5-kS-g89" secondAttribute="trailing" id="B95-LC-96x"/>
+                <constraint firstItem="rh5-kS-g89" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="jFW-ek-bdv"/>
             </constraints>
         </customView>
     </objects>

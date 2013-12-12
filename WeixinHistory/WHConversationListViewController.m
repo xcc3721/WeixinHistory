@@ -18,6 +18,12 @@
 
 @implementation WHConversationListViewController
 
+- (void)dealloc
+{
+    [self.tableView setDelegate:nil];
+    [self.tableView setDataSource:nil];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -84,10 +90,23 @@
 {
     if (notification.object == self.tableView)
     {
-        WHConversationViewController *conversation = [WHConversationViewController new];
-        conversation.conversation = self.conversations[[self.tableView selectedRow]];
-        [self.navigationController pushViewController:conversation animated:YES];
+        
+        if ([self.tableView selectedRow] != -1)
+        {
+            WHConversationViewController *conversation = [WHConversationViewController new];
+            conversation.conversation = self.conversations[[self.tableView selectedRow]];
+            [self.navigationController pushViewController:conversation animated:YES];
+            [conversation.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+            [[conversation.view superview] bindSameSizeWithSubview:conversation.view];
+
+        }
+        
     }
+}
+
+- (void)windowDidResize:(NSNotification *)notification
+{
+    NSLog(@"%@", notification);
 }
 
 @end
