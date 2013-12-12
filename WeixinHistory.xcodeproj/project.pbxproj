@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F14A97E1858B5510085DF23 /* Photon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F14A97C1858B2F90085DF23 /* Photon.framework */; };
-		5F14A97F1858B55C0085DF23 /* Photon.framework in Resources */ = {isa = PBXBuildFile; fileRef = 5F14A97C1858B2F90085DF23 /* Photon.framework */; };
+		1C56061718597689009450B7 /* Photon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F14A97C1858B2F90085DF23 /* Photon.framework */; };
+		1C560618185976A4009450B7 /* Photon.framework in Resources */ = {isa = PBXBuildFile; fileRef = 5F14A97C1858B2F90085DF23 /* Photon.framework */; };
 		5F14A9831858B7400085DF23 /* WHUserFolderSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F14A9811858B7400085DF23 /* WHUserFolderSelectViewController.m */; };
 		5F14A9841858B7400085DF23 /* WHUserFolderSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F14A9821858B7400085DF23 /* WHUserFolderSelectViewController.xib */; };
 		5F3D9E0D1855FA8E0004E9E2 /* WHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D9E0B1855FA8E0004E9E2 /* WHBaseViewController.m */; };
@@ -168,8 +168,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C56061718597689009450B7 /* Photon.framework in Frameworks */,
 				5F944B1418545F80000A791D /* libcrypto.dylib in Frameworks */,
-				5F14A97E1858B5510085DF23 /* Photon.framework in Frameworks */,
 				5F944B1218545E75000A791D /* Security.framework in Frameworks */,
 				5F944B0E18545E2E000A791D /* libssl.dylib in Frameworks */,
 				5FEB312E184505890064B200 /* QuartzCore.framework in Frameworks */,
@@ -475,11 +475,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F14A97F1858B55C0085DF23 /* Photon.framework in Resources */,
 				5FCD5D3518576263007EB3E9 /* WHConversationListViewController.xib in Resources */,
 				5F3D9E0E1855FA8E0004E9E2 /* WHBaseViewController.xib in Resources */,
 				5F43789D1844EB9B00B5ADFC /* InfoPlist.strings in Resources */,
 				5F4378CF1844EC7100B5ADFC /* WHMainWindowController.xib in Resources */,
+				1C560618185976A4009450B7 /* Photon.framework in Resources */,
 				5F3D9E131855FB060004E9E2 /* WHDeviceViewController.xib in Resources */,
 				5F409F8E185342CE007EB9CD /* WHContactsViewController.xib in Resources */,
 				5F14A9841858B7400085DF23 /* WHUserFolderSelectViewController.xib in Resources */,
@@ -701,7 +701,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/XCC/Workspace/WeixinHistory,
+					"/Users/XCC/Workspace/WeixinHistory/**",
+					/Users/erick_xi/Workspace/WeixinHistory,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeixinHistory/WeixinHistory-Prefix.pch";
@@ -719,7 +720,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/XCC/Workspace/WeixinHistory,
+					"/Users/XCC/Workspace/WeixinHistory/**",
+					/Users/erick_xi/Workspace/WeixinHistory,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeixinHistory/WeixinHistory-Prefix.pch";

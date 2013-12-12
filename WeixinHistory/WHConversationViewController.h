@@ -8,6 +8,10 @@
 
 #import "WHBaseViewController.h"
 
-@interface WHConversationViewController : WHBaseViewController
+@interface WHConversationViewController : WHBaseViewController <NSTableViewDataSource, NSTableViewDelegate>
+
+@property (nonatomic, strong) WHConversation *conversation;
+
+@property (weak) IBOutlet NSTableView *tableView;
 
 @end

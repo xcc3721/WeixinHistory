@@ -84,7 +84,9 @@
 {
     if (notification.object == self.tableView)
     {
-        [self.navigationController pushViewController:[WHConversationViewController new] animated:YES];
+        WHConversationViewController *conversation = [WHConversationViewController new];
+        conversation.conversation = self.conversations[[self.tableView selectedRow]];
+        [self.navigationController pushViewController:conversation animated:YES];
     }
 }
 
