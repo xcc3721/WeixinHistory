@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1C56061718597689009450B7 /* Photon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F14A97C1858B2F90085DF23 /* Photon.framework */; };
 		1C560618185976A4009450B7 /* Photon.framework in Resources */ = {isa = PBXBuildFile; fileRef = 5F14A97C1858B2F90085DF23 /* Photon.framework */; };
+		1CDF173C185AD0B900FC5D4D /* WHVoiceMessageCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDF173B185AD0B900FC5D4D /* WHVoiceMessageCellView.m */; };
+		1CDF173F185AD0E300FC5D4D /* WHMessage+TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDF173E185AD0E300FC5D4D /* WHMessage+TableView.m */; };
 		5F14A9831858B7400085DF23 /* WHUserFolderSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F14A9811858B7400085DF23 /* WHUserFolderSelectViewController.m */; };
 		5F14A9841858B7400085DF23 /* WHUserFolderSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F14A9821858B7400085DF23 /* WHUserFolderSelectViewController.xib */; };
 		5F3D9E0D1855FA8E0004E9E2 /* WHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D9E0B1855FA8E0004E9E2 /* WHBaseViewController.m */; };
@@ -78,6 +80,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1CDF173A185AD0B900FC5D4D /* WHVoiceMessageCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHVoiceMessageCellView.h; sourceTree = "<group>"; };
+		1CDF173B185AD0B900FC5D4D /* WHVoiceMessageCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHVoiceMessageCellView.m; sourceTree = "<group>"; };
+		1CDF173D185AD0E300FC5D4D /* WHMessage+TableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WHMessage+TableView.h"; sourceTree = "<group>"; };
+		1CDF173E185AD0E300FC5D4D /* WHMessage+TableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WHMessage+TableView.m"; sourceTree = "<group>"; };
 		5F14A97C1858B2F90085DF23 /* Photon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Photon.framework; sourceTree = "<group>"; };
 		5F14A9801858B7400085DF23 /* WHUserFolderSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHUserFolderSelectViewController.h; sourceTree = "<group>"; };
 		5F14A9811858B7400085DF23 /* WHUserFolderSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHUserFolderSelectViewController.m; sourceTree = "<group>"; };
@@ -225,6 +231,10 @@
 				5F3DBF95185A0FCD004F2E12 /* WHTextMessageCellView.h */,
 				5F3DBF96185A0FCD004F2E12 /* WHTextMessageCellView.m */,
 				5F3DBF98185A10D3004F2E12 /* WHTextMessageCellView.xib */,
+				1CDF173A185AD0B900FC5D4D /* WHVoiceMessageCellView.h */,
+				1CDF173B185AD0B900FC5D4D /* WHVoiceMessageCellView.m */,
+				1CDF173D185AD0E300FC5D4D /* WHMessage+TableView.h */,
+				1CDF173E185AD0E300FC5D4D /* WHMessage+TableView.m */,
 			);
 			name = Conversation;
 			sourceTree = "<group>";
@@ -579,6 +589,7 @@
 				5F3D9E121855FB060004E9E2 /* WHDeviceViewController.m in Sources */,
 				5FFD54F01858D05500F259B6 /* WHConversationViewController.m in Sources */,
 				5F3D9E16185600960004E9E2 /* WHDeviceTableViewCell.m in Sources */,
+				1CDF173C185AD0B900FC5D4D /* WHVoiceMessageCellView.m in Sources */,
 				5FC908EC1854DBAA00062006 /* WHAfcHelper.m in Sources */,
 				5FCD5D3418576263007EB3E9 /* WHConversationListViewController.m in Sources */,
 				5F3DBF8B1859EAE9004F2E12 /* WHGuideDeviceViewController.m in Sources */,
@@ -597,6 +608,7 @@
 				5FB8229B184B2DC900FEB020 /* WHSearch.m in Sources */,
 				5FEB312C1844FF040064B200 /* NSAlert+Popover.m in Sources */,
 				5FB822A8184B9E4F00FEB020 /* WHMessage.m in Sources */,
+				1CDF173F185AD0E300FC5D4D /* WHMessage+TableView.m in Sources */,
 				5FCD5D3018575FA0007EB3E9 /* NSView+WHAddtion.m in Sources */,
 				5FB822A5184B9CDA00FEB020 /* WHConversation.m in Sources */,
 				5F3DBF97185A0FCD004F2E12 /* WHTextMessageCellView.m in Sources */,

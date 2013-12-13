@@ -15,6 +15,13 @@ typedef NS_ENUM(NSInteger, MessageDestination)
     MessageReceived,
 };
 
+typedef NS_ENUM(NSInteger, MessageType)
+{
+    MessageTypeText = 1,
+    MessageTypeVoice = 34,
+    MessageTypeAppShare = 49,
+    MessageTypeSystem = 10000,
+};
 
 @interface WHMessage : NSObject
 
@@ -24,7 +31,7 @@ typedef NS_ENUM(NSInteger, MessageDestination)
 @property (nonatomic, assign) NSInteger localId;
 @property (nonatomic, assign) NSInteger serverId;
 @property (nonatomic, copy) NSString *message;
-@property (nonatomic, assign) NSInteger type;
+@property (nonatomic, assign) MessageType type;
 @property (nonatomic, assign) MessageDestination dest;
 @property (nonatomic, assign) NSInteger status;
 @property (nonatomic, assign) NSInteger imageStatus;

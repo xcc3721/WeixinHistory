@@ -9,11 +9,10 @@
 #import "WHTextMessageCellView.h"
 @interface WHTextMessageCellView ()
 
-<<<<<<< HEAD
+
 @property (weak) IBOutlet NSLayoutConstraint *leftConstraint;
 @property (weak) IBOutlet NSLayoutConstraint *rightConstraint;
-=======
->>>>>>> 1f782499d2601392684bcc6ec64e252ef27507e9
+
 @property (weak) IBOutlet PXLabel *textLabel;
 
 @end
@@ -48,16 +47,16 @@
     if (message.dest == MessageReceived)
     {
         [self.leftConstraint setConstant:0];
-        [self.rightConstraint setConstant:20];
+        [self.rightConstraint setConstant:100];
         [self.textLabel setTextAlignment:NSLeftTextAlignment];
     }
     else
     {
-        [self.leftConstraint setConstant:20];
+        [self.leftConstraint setConstant:100];
         [self.rightConstraint setConstant:0];
-        [self.textLabel setTextAlignment:NSRightTextAlignment];
-        
+        [self.textLabel setTextAlignment:NSLeftTextAlignment];
     }
+    [self.textLabel setText:message.message];
 }
 
 

@@ -9,6 +9,7 @@
 #import "WHConversationViewController.h"
 #import "WHMessage.h"
 #import "WHMessageCellView.h"
+#import "WHMessage+TableView.h"
 
 @interface WHConversationViewController ()
 
