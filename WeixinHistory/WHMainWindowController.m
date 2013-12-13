@@ -15,6 +15,7 @@
 #import "WHConversationListViewController.h"
 #import "WHNoneDeviceViewController.h"
 #import "WHGuideDeviceViewController.h"
+#import "WHSettingsViewController.h"
 
 @interface WHMainWindowController () <NSPopoverDelegate>
 
@@ -61,6 +62,7 @@
     [self.sidebar setCellSize:NSMakeSize(100, 80)];
     
     [self.sidebar addItemWithImage:[NSImage cellImageNamed:@"apple"] target:self action:@selector(showDevicePopover:)];
+    [self.sidebar addItemWithImage:[NSImage cellImageNamed:@"settings"] target:self action:@selector(showSettings:)];
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceDidAdd:) name:WHDeviceManagerDeviceDidAddNotification object:nil];
@@ -96,8 +98,8 @@
 {
     if ([self.sidebar.matrix numberOfRows] > 1)
     {
+        [self.sidebar.matrix removeRow:3];
         [self.sidebar.matrix removeRow:2];
-        [self.sidebar.matrix removeRow:1];
     }
     if ([[[WHDeviceManager defaultManager] currentDevices] count])
     {
@@ -153,14 +155,14 @@
          self.currentUDID = device.udid;
          self.userPath = userPath;
          
-         if ([self.sidebar.matrix numberOfRows] == 1)
+         if ([self.sidebar.matrix numberOfRows] == 2)
          {
              [self.sidebar addItemWithImage:[NSImage cellImageNamed:@"contacts"] target:self action:@selector(showContacts:)];
              [self.sidebar addItemWithImage:[NSImage cellImageNamed:@"chat"] target:self action:@selector(showConversations:)];
          }
          
          
-         [self.sidebar.matrix selectCellAtRow:2 column:0];
+         [self.sidebar.matrix selectCellAtRow:3 column:0];
          [self showConversations:sender];
          
          
@@ -170,6 +172,11 @@
     PXNavigationController *nc = [[PXNavigationController alloc] initWithRootViewController:vc];
     popover.contentViewController = nc;
     [popover showRelativeToRect:[sender cellFrameAtRow:[sender selectedRow] column:[sender selectedColumn]] ofView:sender preferredEdge:NSMaxXEdge];
+}
+
+- (IBAction)showSettings:(id)sender
+{
+    [self switchToContentViewController:[WHSettingsViewController new]];
 }
 
 - (void)switchToContentViewController:(NSViewController *)vc

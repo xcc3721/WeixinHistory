@@ -23,6 +23,7 @@ NS_ENUM(NSInteger, WHContactGender)
 @property (nonatomic, copy) NSString *userName;
 @property (nonatomic, copy) NSURL *imageURL;
 
+
 - (id)initWithDictionary:(NSDictionary *)dict;
 
 @end

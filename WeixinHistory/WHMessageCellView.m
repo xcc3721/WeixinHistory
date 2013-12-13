@@ -7,6 +7,8 @@
 //
 
 #import "WHMessageCellView.h"
+#import "WHMessageViewFactory.h"
+#import "WHBaseMessageView.h"
 
 @implementation WHMessageCellView
 
@@ -22,7 +24,15 @@
 
 - (void)setupWithMessage:(WHMessage *)message
 {
-    
+    WHBaseMessageView *messageView = (WHBaseMessageView *)[WHMessageViewFactory messageViewWithMessage:message];
+    [self.containerView addSubview:messageView];
+    [self.containerView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.containerView bindSameSizeWithSubview:messageView];
+}
+
+- (void)prepareForReuse
+{
+    [[self.containerView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 
 @end

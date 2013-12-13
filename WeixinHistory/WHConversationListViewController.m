@@ -104,9 +104,4 @@
     }
 }
 
-- (void)windowDidResize:(NSNotification *)notification
-{
-    NSLog(@"%@", notification);
-}
-
 @end

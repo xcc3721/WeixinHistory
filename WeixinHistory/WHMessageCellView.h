@@ -13,5 +13,8 @@
 
 - (void)setupWithMessage:(WHMessage *)message;
 
+@property (weak) IBOutlet NSImageView *avatarImageView;
+@property (weak) IBOutlet NSView *containerView;
+
 
 @end

@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		1C56061718597689009450B7 /* Photon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F14A97C1858B2F90085DF23 /* Photon.framework */; };
 		1C560618185976A4009450B7 /* Photon.framework in Resources */ = {isa = PBXBuildFile; fileRef = 5F14A97C1858B2F90085DF23 /* Photon.framework */; };
-		1CDF173C185AD0B900FC5D4D /* WHVoiceMessageCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDF173B185AD0B900FC5D4D /* WHVoiceMessageCellView.m */; };
-		1CDF173F185AD0E300FC5D4D /* WHMessage+TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDF173E185AD0E300FC5D4D /* WHMessage+TableView.m */; };
 		5F14A9831858B7400085DF23 /* WHUserFolderSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F14A9811858B7400085DF23 /* WHUserFolderSelectViewController.m */; };
 		5F14A9841858B7400085DF23 /* WHUserFolderSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F14A9821858B7400085DF23 /* WHUserFolderSelectViewController.xib */; };
 		5F3D9E0D1855FA8E0004E9E2 /* WHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D9E0B1855FA8E0004E9E2 /* WHBaseViewController.m */; };
@@ -23,8 +21,6 @@
 		5F3DBF8B1859EAE9004F2E12 /* WHGuideDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3DBF891859EAE9004F2E12 /* WHGuideDeviceViewController.m */; };
 		5F3DBF8C1859EAE9004F2E12 /* WHGuideDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F3DBF8A1859EAE9004F2E12 /* WHGuideDeviceViewController.xib */; };
 		5F3DBF94185A0D1E004F2E12 /* WHMessageCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3DBF93185A0D1E004F2E12 /* WHMessageCellView.m */; };
-		5F3DBF97185A0FCD004F2E12 /* WHTextMessageCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3DBF96185A0FCD004F2E12 /* WHTextMessageCellView.m */; };
-		5F3DBF99185A10D3004F2E12 /* WHTextMessageCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F3DBF98185A10D3004F2E12 /* WHTextMessageCellView.xib */; };
 		5F409F881853212C007EB9CD /* NSImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F409F871853212C007EB9CD /* NSImage+Resize.m */; };
 		5F409F8D185342CE007EB9CD /* WHContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F409F8B185342CE007EB9CD /* WHContactsViewController.m */; };
 		5F409F8E185342CE007EB9CD /* WHContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F409F8C185342CE007EB9CD /* WHContactsViewController.xib */; };
@@ -45,6 +41,14 @@
 		5F4378CA1844EBCD00B5ADFC /* WHBaseWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F4378C81844EBCD00B5ADFC /* WHBaseWindowController.xib */; };
 		5F4378CE1844EC7100B5ADFC /* WHMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4378CC1844EC7100B5ADFC /* WHMainWindowController.m */; };
 		5F4378CF1844EC7100B5ADFC /* WHMainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F4378CD1844EC7100B5ADFC /* WHMainWindowController.xib */; };
+		5F4DED05185B59D600F62858 /* WHMessageCellView_Received.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F4DED04185B59D600F62858 /* WHMessageCellView_Received.xib */; };
+		5F4DED07185B5DE200F62858 /* WHMessageCellView_Sent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F4DED06185B5DE200F62858 /* WHMessageCellView_Sent.xib */; };
+		5F4DED0B185B720500F62858 /* WHSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4DED09185B720500F62858 /* WHSettingsViewController.m */; };
+		5F4DED0C185B720500F62858 /* WHSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F4DED0A185B720500F62858 /* WHSettingsViewController.xib */; };
+		5F4DED12185B791400F62858 /* WHMessageViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4DED11185B791400F62858 /* WHMessageViewFactory.m */; };
+		5F4DED15185B797B00F62858 /* WHTextMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4DED14185B797B00F62858 /* WHTextMessageView.m */; };
+		5F4DED18185B7B0C00F62858 /* WHTextMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F4DED17185B7B0C00F62858 /* WHTextMessageView.xib */; };
+		5F4DED1B185B7BC000F62858 /* WHBaseMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4DED1A185B7BC000F62858 /* WHBaseMessageView.m */; };
 		5F944B0E18545E2E000A791D /* libssl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F944B0D18545E2E000A791D /* libssl.dylib */; };
 		5F944B1218545E75000A791D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F944B1118545E75000A791D /* Security.framework */; };
 		5F944B1418545F80000A791D /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F944B1318545F80000A791D /* libcrypto.dylib */; };
@@ -80,10 +84,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1CDF173A185AD0B900FC5D4D /* WHVoiceMessageCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHVoiceMessageCellView.h; sourceTree = "<group>"; };
-		1CDF173B185AD0B900FC5D4D /* WHVoiceMessageCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHVoiceMessageCellView.m; sourceTree = "<group>"; };
-		1CDF173D185AD0E300FC5D4D /* WHMessage+TableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WHMessage+TableView.h"; sourceTree = "<group>"; };
-		1CDF173E185AD0E300FC5D4D /* WHMessage+TableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WHMessage+TableView.m"; sourceTree = "<group>"; };
 		5F14A97C1858B2F90085DF23 /* Photon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Photon.framework; sourceTree = "<group>"; };
 		5F14A9801858B7400085DF23 /* WHUserFolderSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHUserFolderSelectViewController.h; sourceTree = "<group>"; };
 		5F14A9811858B7400085DF23 /* WHUserFolderSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHUserFolderSelectViewController.m; sourceTree = "<group>"; };
@@ -105,9 +105,6 @@
 		5F3DBF8A1859EAE9004F2E12 /* WHGuideDeviceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHGuideDeviceViewController.xib; sourceTree = "<group>"; };
 		5F3DBF92185A0D1E004F2E12 /* WHMessageCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHMessageCellView.h; sourceTree = "<group>"; };
 		5F3DBF93185A0D1E004F2E12 /* WHMessageCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHMessageCellView.m; sourceTree = "<group>"; };
-		5F3DBF95185A0FCD004F2E12 /* WHTextMessageCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHTextMessageCellView.h; sourceTree = "<group>"; };
-		5F3DBF96185A0FCD004F2E12 /* WHTextMessageCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHTextMessageCellView.m; sourceTree = "<group>"; };
-		5F3DBF98185A10D3004F2E12 /* WHTextMessageCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHTextMessageCellView.xib; sourceTree = "<group>"; };
 		5F409F861853212C007EB9CD /* NSImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Resize.h"; sourceTree = "<group>"; };
 		5F409F871853212C007EB9CD /* NSImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Resize.m"; sourceTree = "<group>"; };
 		5F409F8A185342CE007EB9CD /* WHContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHContactsViewController.h; sourceTree = "<group>"; };
@@ -142,6 +139,19 @@
 		5F4378CB1844EC7100B5ADFC /* WHMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHMainWindowController.h; sourceTree = "<group>"; };
 		5F4378CC1844EC7100B5ADFC /* WHMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHMainWindowController.m; sourceTree = "<group>"; };
 		5F4378CD1844EC7100B5ADFC /* WHMainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHMainWindowController.xib; sourceTree = "<group>"; };
+		5F4DED04185B59D600F62858 /* WHMessageCellView_Received.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHMessageCellView_Received.xib; sourceTree = "<group>"; };
+		5F4DED06185B5DE200F62858 /* WHMessageCellView_Sent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHMessageCellView_Sent.xib; sourceTree = "<group>"; };
+		5F4DED08185B720500F62858 /* WHSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHSettingsViewController.h; sourceTree = "<group>"; };
+		5F4DED09185B720500F62858 /* WHSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHSettingsViewController.m; sourceTree = "<group>"; };
+		5F4DED0A185B720500F62858 /* WHSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHSettingsViewController.xib; sourceTree = "<group>"; };
+		5F4DED10185B791400F62858 /* WHMessageViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHMessageViewFactory.h; sourceTree = "<group>"; };
+		5F4DED11185B791400F62858 /* WHMessageViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHMessageViewFactory.m; sourceTree = "<group>"; };
+		5F4DED13185B797B00F62858 /* WHTextMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHTextMessageView.h; sourceTree = "<group>"; };
+		5F4DED14185B797B00F62858 /* WHTextMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHTextMessageView.m; sourceTree = "<group>"; };
+		5F4DED16185B799D00F62858 /* WHMessageViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHMessageViewProtocol.h; sourceTree = "<group>"; };
+		5F4DED17185B7B0C00F62858 /* WHTextMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHTextMessageView.xib; sourceTree = "<group>"; };
+		5F4DED19185B7BC000F62858 /* WHBaseMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHBaseMessageView.h; sourceTree = "<group>"; };
+		5F4DED1A185B7BC000F62858 /* WHBaseMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHBaseMessageView.m; sourceTree = "<group>"; };
 		5F944B0D18545E2E000A791D /* libssl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.dylib; path = usr/lib/libssl.dylib; sourceTree = SDKROOT; };
 		5F944B0F18545E42000A791D /* libssl.0.9.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.0.9.8.dylib; path = usr/lib/libssl.0.9.8.dylib; sourceTree = SDKROOT; };
 		5F944B1118545E75000A791D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -228,13 +238,16 @@
 				5FFD54EF1858D05500F259B6 /* WHConversationViewController.xib */,
 				5F3DBF92185A0D1E004F2E12 /* WHMessageCellView.h */,
 				5F3DBF93185A0D1E004F2E12 /* WHMessageCellView.m */,
-				5F3DBF95185A0FCD004F2E12 /* WHTextMessageCellView.h */,
-				5F3DBF96185A0FCD004F2E12 /* WHTextMessageCellView.m */,
-				5F3DBF98185A10D3004F2E12 /* WHTextMessageCellView.xib */,
-				1CDF173A185AD0B900FC5D4D /* WHVoiceMessageCellView.h */,
-				1CDF173B185AD0B900FC5D4D /* WHVoiceMessageCellView.m */,
-				1CDF173D185AD0E300FC5D4D /* WHMessage+TableView.h */,
-				1CDF173E185AD0E300FC5D4D /* WHMessage+TableView.m */,
+				5F4DED04185B59D600F62858 /* WHMessageCellView_Received.xib */,
+				5F4DED06185B5DE200F62858 /* WHMessageCellView_Sent.xib */,
+				5F4DED16185B799D00F62858 /* WHMessageViewProtocol.h */,
+				5F4DED10185B791400F62858 /* WHMessageViewFactory.h */,
+				5F4DED11185B791400F62858 /* WHMessageViewFactory.m */,
+				5F4DED13185B797B00F62858 /* WHTextMessageView.h */,
+				5F4DED14185B797B00F62858 /* WHTextMessageView.m */,
+				5F4DED17185B7B0C00F62858 /* WHTextMessageView.xib */,
+				5F4DED19185B7BC000F62858 /* WHBaseMessageView.h */,
+				5F4DED1A185B7BC000F62858 /* WHBaseMessageView.m */,
 			);
 			name = Conversation;
 			sourceTree = "<group>";
@@ -265,6 +278,9 @@
 				5F14A9801858B7400085DF23 /* WHUserFolderSelectViewController.h */,
 				5F14A9811858B7400085DF23 /* WHUserFolderSelectViewController.m */,
 				5F14A9821858B7400085DF23 /* WHUserFolderSelectViewController.xib */,
+				5F4DED08185B720500F62858 /* WHSettingsViewController.h */,
+				5F4DED09185B720500F62858 /* WHSettingsViewController.m */,
+				5F4DED0A185B720500F62858 /* WHSettingsViewController.xib */,
 				5F3DBF91185A0CA5004F2E12 /* Conversation */,
 			);
 			name = MainWindow;
@@ -515,6 +531,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FCD5D3518576263007EB3E9 /* WHConversationListViewController.xib in Resources */,
+				5F4DED07185B5DE200F62858 /* WHMessageCellView_Sent.xib in Resources */,
+				5F4DED0C185B720500F62858 /* WHSettingsViewController.xib in Resources */,
 				5F3D9E0E1855FA8E0004E9E2 /* WHBaseViewController.xib in Resources */,
 				5F43789D1844EB9B00B5ADFC /* InfoPlist.strings in Resources */,
 				5F3DBF8C1859EAE9004F2E12 /* WHGuideDeviceViewController.xib in Resources */,
@@ -522,13 +540,14 @@
 				1C560618185976A4009450B7 /* Photon.framework in Resources */,
 				5F3D9E131855FB060004E9E2 /* WHDeviceViewController.xib in Resources */,
 				5F409F8E185342CE007EB9CD /* WHContactsViewController.xib in Resources */,
+				5F4DED18185B7B0C00F62858 /* WHTextMessageView.xib in Resources */,
 				5F14A9841858B7400085DF23 /* WHUserFolderSelectViewController.xib in Resources */,
 				5F4378AB1844EB9B00B5ADFC /* Images.xcassets in Resources */,
 				5F4378CA1844EBCD00B5ADFC /* WHBaseWindowController.xib in Resources */,
 				5F4378A31844EB9B00B5ADFC /* Credits.rtf in Resources */,
 				5FCD5D3A1857636C007EB3E9 /* WHNoneDeviceViewController.xib in Resources */,
 				5FFD54F11858D05500F259B6 /* WHConversationViewController.xib in Resources */,
-				5F3DBF99185A10D3004F2E12 /* WHTextMessageCellView.xib in Resources */,
+				5F4DED05185B59D600F62858 /* WHMessageCellView_Received.xib in Resources */,
 				5F4378A91844EB9B00B5ADFC /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,14 +606,17 @@
 				5FC908E61854D56E00062006 /* NSString+WHHelper.m in Sources */,
 				5FB822A2184B336600FEB020 /* WHContact.m in Sources */,
 				5F3D9E121855FB060004E9E2 /* WHDeviceViewController.m in Sources */,
+				5F4DED1B185B7BC000F62858 /* WHBaseMessageView.m in Sources */,
 				5FFD54F01858D05500F259B6 /* WHConversationViewController.m in Sources */,
 				5F3D9E16185600960004E9E2 /* WHDeviceTableViewCell.m in Sources */,
-				1CDF173C185AD0B900FC5D4D /* WHVoiceMessageCellView.m in Sources */,
+				5F4DED12185B791400F62858 /* WHMessageViewFactory.m in Sources */,
 				5FC908EC1854DBAA00062006 /* WHAfcHelper.m in Sources */,
 				5FCD5D3418576263007EB3E9 /* WHConversationListViewController.m in Sources */,
+				5F4DED15185B797B00F62858 /* WHTextMessageView.m in Sources */,
 				5F3DBF8B1859EAE9004F2E12 /* WHGuideDeviceViewController.m in Sources */,
 				5F409F9518538C11007EB9CD /* WHDevice.m in Sources */,
 				5F4378C91844EBCD00B5ADFC /* WHBaseWindowController.m in Sources */,
+				5F4DED0B185B720500F62858 /* WHSettingsViewController.m in Sources */,
 				5FCD5D391857636C007EB3E9 /* WHNoneDeviceViewController.m in Sources */,
 				5F409F8D185342CE007EB9CD /* WHContactsViewController.m in Sources */,
 				5F409F881853212C007EB9CD /* NSImage+Resize.m in Sources */,
@@ -608,10 +630,8 @@
 				5FB8229B184B2DC900FEB020 /* WHSearch.m in Sources */,
 				5FEB312C1844FF040064B200 /* NSAlert+Popover.m in Sources */,
 				5FB822A8184B9E4F00FEB020 /* WHMessage.m in Sources */,
-				1CDF173F185AD0E300FC5D4D /* WHMessage+TableView.m in Sources */,
 				5FCD5D3018575FA0007EB3E9 /* NSView+WHAddtion.m in Sources */,
 				5FB822A5184B9CDA00FEB020 /* WHConversation.m in Sources */,
-				5F3DBF97185A0FCD004F2E12 /* WHTextMessageCellView.m in Sources */,
 				5F4378CE1844EC7100B5ADFC /* WHMainWindowController.m in Sources */,
 				5F3D9E0D1855FA8E0004E9E2 /* WHBaseViewController.m in Sources */,
 			);

@@ -9,11 +9,15 @@
 #import "WHConversationViewController.h"
 #import "WHMessage.h"
 #import "WHMessageCellView.h"
-#import "WHMessage+TableView.h"
+
+
+extern NSString * const WHWechatUserNameKey;
 
 @interface WHConversationViewController ()
 
 @property (nonatomic, strong) id strongSelf;
+@property (nonatomic, strong) NSImage *frientAvatar;
+@property (nonatomic, strong) NSImage *userAvatar;
 
 @end
 
@@ -23,6 +27,7 @@
 {
     [self.tableView setDelegate:nil];
     [self.tableView setDataSource:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
@@ -38,7 +43,20 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    [self.tableView registerNib:[[NSNib alloc] initWithNibNamed:@"WHTextMessageCellView" bundle:nil] forIdentifier:@"TextCell"];
+    [self.tableView registerNib:[[NSNib alloc] initWithNibNamed:@"WHMessageCellView_Received" bundle:nil] forIdentifier:@"ReceivedMessage"];
+    [self.tableView registerNib:[[NSNib alloc] initWithNibNamed:@"WHMessageCellView_Sent" bundle:nil] forIdentifier:@"SentMessage"];
+
+}
+
+- (void)setConversation:(WHConversation *)conversation
+{
+    if (_conversation != conversation)
+    {
+        _conversation = conversation;
+        WHContact *contact = [[_conversation contacts] lastObject];
+        NSImage *image = [[NSImage alloc] initWithData:[NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:[contact imageURL]] returningResponse:nil error:nil]];
+        self.frientAvatar = image;
+    }
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
@@ -48,19 +66,50 @@
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    WHMessageCellView *view = [tableView makeViewWithIdentifier:@"TextCell" owner:self];
     WHMessage *message = [self.conversation messages][row];
+    NSString *identifier = nil;
+    NSImage *avatar = nil;
+    if (message.dest == MessageReceived) {
+        identifier = @"ReceivedMessage";
+        avatar = self.frientAvatar;
+    }
+    else
+    {
+        identifier = @"SentMessage";
+        avatar = self.userAvatar;
+    }
+    WHMessageCellView *view = [tableView makeViewWithIdentifier:identifier owner:self];
+    
     [view setupWithMessage:message];
+    [view.avatarImageView setImage:avatar];
+    
+    NSLog(@"%@", view.containerView);
+    
     return view;
 }
 
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row
 {
-    WHMessage *message = [self.conversation messages][row];
-    NSSize size = NSMakeSize(NSWidth(tableView.frame) - 30, CGFLOAT_MAX);
-    NSRect rect = [message.message boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [NSFont fontWithName:@"Helvetica" size:11.0]}];
-    CGFloat height = NSHeight(rect);
-    return height;
+    return 200;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+//    NSString *userName = [[NSUserDefaults standardUserDefaults] stringForKey:WHWechatUserNameKey];
+//    if (userName)
+//    {
+//        NSHTTPURLResponse *response = nil;
+//        NSError *err = nil;
+//        NSData *data = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxgeticon?username=%@", userName]]] returningResponse:&response error:&err];
+//        NSImage *image = [[NSImage alloc] initWithData:data];
+//        self.userAvatar = image;
+//    }
+//    else
+    {
+        self.userAvatar = [NSImage imageNamed:@"defaultAvatar"];
+    }
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -68,6 +117,13 @@
     [super viewDidAppear:animated];
     [self.tableView reloadData];
     self.strongSelf = self;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(windowDidResize:) name:NSWindowDidEndLiveResizeNotification object:nil];
+}
+
+- (void)windowDidResize:(NSNotification *)notification
+{
+    NSLog(@"%@", notification);
 }
 
 - (void)viewDidDisappear:(BOOL)animated
