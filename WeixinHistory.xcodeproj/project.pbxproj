@@ -52,6 +52,11 @@
 		5F944B0E18545E2E000A791D /* libssl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F944B0D18545E2E000A791D /* libssl.dylib */; };
 		5F944B1218545E75000A791D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F944B1118545E75000A791D /* Security.framework */; };
 		5F944B1418545F80000A791D /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F944B1318545F80000A791D /* libcrypto.dylib */; };
+		5FB17560185D882300A83387 /* NSObject+PTLSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1755B185D882300A83387 /* NSObject+PTLSwizzle.m */; };
+		5FB17561185D882300A83387 /* UIColor+PTLViewDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1755D185D882300A83387 /* UIColor+PTLViewDebugger.m */; };
+		5FB17562185D882300A83387 /* UIView+PTLViewDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1755F185D882300A83387 /* UIView+PTLViewDebugger.m */; };
+		5FB17565185D9F7800A83387 /* WHUnknownMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB17564185D9F7800A83387 /* WHUnknownMessageView.m */; };
+		5FB17567185D9FE300A83387 /* WHUnknownMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FB17566185D9FE300A83387 /* WHUnknownMessageView.xib */; };
 		5FB8229B184B2DC900FEB020 /* WHSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8229A184B2DC900FEB020 /* WHSearch.m */; };
 		5FB8229F184B2E3300FEB020 /* WHDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8229E184B2E3300FEB020 /* WHDBManager.m */; };
 		5FB822A2184B336600FEB020 /* WHContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB822A1184B336600FEB020 /* WHContact.m */; };
@@ -68,6 +73,9 @@
 		5FCD5D3A1857636C007EB3E9 /* WHNoneDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FCD5D381857636C007EB3E9 /* WHNoneDeviceViewController.xib */; };
 		5FEB312C1844FF040064B200 /* NSAlert+Popover.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEB312B1844FF040064B200 /* NSAlert+Popover.m */; };
 		5FEB312E184505890064B200 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEB312D184505890064B200 /* QuartzCore.framework */; };
+		5FF6CD5C185DFC4400B976C5 /* WHVoiceMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF6CD5B185DFC4400B976C5 /* WHVoiceMessageView.m */; };
+		5FF6CD5E185DFC6300B976C5 /* WHVoiceMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF6CD5D185DFC6300B976C5 /* WHVoiceMessageView.xib */; };
+		5FF6CD60185E083C00B976C5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF6CD5F185E083C00B976C5 /* AVFoundation.framework */; };
 		5FFD54F01858D05500F259B6 /* WHConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD54EE1858D05500F259B6 /* WHConversationViewController.m */; };
 		5FFD54F11858D05500F259B6 /* WHConversationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FFD54EF1858D05500F259B6 /* WHConversationViewController.xib */; };
 		D3480C47DECB4385AC5A0F00 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DAE191368C54FD5B3AD8ED4 /* libPods.a */; };
@@ -156,6 +164,15 @@
 		5F944B0F18545E42000A791D /* libssl.0.9.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.0.9.8.dylib; path = usr/lib/libssl.0.9.8.dylib; sourceTree = SDKROOT; };
 		5F944B1118545E75000A791D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5F944B1318545F80000A791D /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
+		5FB1755A185D882300A83387 /* NSObject+PTLSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PTLSwizzle.h"; sourceTree = "<group>"; };
+		5FB1755B185D882300A83387 /* NSObject+PTLSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PTLSwizzle.m"; sourceTree = "<group>"; };
+		5FB1755C185D882300A83387 /* UIColor+PTLViewDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PTLViewDebugger.h"; sourceTree = "<group>"; };
+		5FB1755D185D882300A83387 /* UIColor+PTLViewDebugger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PTLViewDebugger.m"; sourceTree = "<group>"; };
+		5FB1755E185D882300A83387 /* UIView+PTLViewDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PTLViewDebugger.h"; sourceTree = "<group>"; };
+		5FB1755F185D882300A83387 /* UIView+PTLViewDebugger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PTLViewDebugger.m"; sourceTree = "<group>"; };
+		5FB17563185D9F7800A83387 /* WHUnknownMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHUnknownMessageView.h; sourceTree = "<group>"; };
+		5FB17564185D9F7800A83387 /* WHUnknownMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHUnknownMessageView.m; sourceTree = "<group>"; };
+		5FB17566185D9FE300A83387 /* WHUnknownMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHUnknownMessageView.xib; sourceTree = "<group>"; };
 		5FB82299184B2DC900FEB020 /* WHSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHSearch.h; sourceTree = "<group>"; };
 		5FB8229A184B2DC900FEB020 /* WHSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHSearch.m; sourceTree = "<group>"; };
 		5FB8229D184B2E3300FEB020 /* WHDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHDBManager.h; sourceTree = "<group>"; };
@@ -185,6 +202,10 @@
 		5FEB312A1844FF040064B200 /* NSAlert+Popover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAlert+Popover.h"; sourceTree = "<group>"; };
 		5FEB312B1844FF040064B200 /* NSAlert+Popover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAlert+Popover.m"; sourceTree = "<group>"; };
 		5FEB312D184505890064B200 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5FF6CD5A185DFC4400B976C5 /* WHVoiceMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHVoiceMessageView.h; sourceTree = "<group>"; };
+		5FF6CD5B185DFC4400B976C5 /* WHVoiceMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHVoiceMessageView.m; sourceTree = "<group>"; };
+		5FF6CD5D185DFC6300B976C5 /* WHVoiceMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHVoiceMessageView.xib; sourceTree = "<group>"; };
+		5FF6CD5F185E083C00B976C5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5FFD54ED1858D05500F259B6 /* WHConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHConversationViewController.h; sourceTree = "<group>"; };
 		5FFD54EE1858D05500F259B6 /* WHConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHConversationViewController.m; sourceTree = "<group>"; };
 		5FFD54EF1858D05500F259B6 /* WHConversationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHConversationViewController.xib; sourceTree = "<group>"; };
@@ -197,6 +218,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FF6CD60185E083C00B976C5 /* AVFoundation.framework in Frameworks */,
 				1C56061718597689009450B7 /* Photon.framework in Frameworks */,
 				5F944B1418545F80000A791D /* libcrypto.dylib in Frameworks */,
 				5F944B1218545E75000A791D /* Security.framework in Frameworks */,
@@ -248,6 +270,12 @@
 				5F4DED17185B7B0C00F62858 /* WHTextMessageView.xib */,
 				5F4DED19185B7BC000F62858 /* WHBaseMessageView.h */,
 				5F4DED1A185B7BC000F62858 /* WHBaseMessageView.m */,
+				5FB17563185D9F7800A83387 /* WHUnknownMessageView.h */,
+				5FB17564185D9F7800A83387 /* WHUnknownMessageView.m */,
+				5FB17566185D9FE300A83387 /* WHUnknownMessageView.xib */,
+				5FF6CD5A185DFC4400B976C5 /* WHVoiceMessageView.h */,
+				5FF6CD5B185DFC4400B976C5 /* WHVoiceMessageView.m */,
+				5FF6CD5D185DFC6300B976C5 /* WHVoiceMessageView.xib */,
 			);
 			name = Conversation;
 			sourceTree = "<group>";
@@ -328,6 +356,7 @@
 		5F4378911844EB9B00B5ADFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5FF6CD5F185E083C00B976C5 /* AVFoundation.framework */,
 				5F14A97C1858B2F90085DF23 /* Photon.framework */,
 				5F944B1318545F80000A791D /* libcrypto.dylib */,
 				5F944B1118545E75000A791D /* Security.framework */,
@@ -414,9 +443,23 @@
 			name = Windows;
 			sourceTree = "<group>";
 		};
+		5FB17559185D882300A83387 /* PTLViewDebugger */ = {
+			isa = PBXGroup;
+			children = (
+				5FB1755A185D882300A83387 /* NSObject+PTLSwizzle.h */,
+				5FB1755B185D882300A83387 /* NSObject+PTLSwizzle.m */,
+				5FB1755C185D882300A83387 /* UIColor+PTLViewDebugger.h */,
+				5FB1755D185D882300A83387 /* UIColor+PTLViewDebugger.m */,
+				5FB1755E185D882300A83387 /* UIView+PTLViewDebugger.h */,
+				5FB1755F185D882300A83387 /* UIView+PTLViewDebugger.m */,
+			);
+			path = PTLViewDebugger;
+			sourceTree = "<group>";
+		};
 		5FB82298184B2D9C00FEB020 /* SQLString */ = {
 			isa = PBXGroup;
 			children = (
+				5FB17559185D882300A83387 /* PTLViewDebugger */,
 				5FB82299184B2DC900FEB020 /* WHSearch.h */,
 				5FB8229A184B2DC900FEB020 /* WHSearch.m */,
 			);
@@ -534,6 +577,8 @@
 				5F4DED07185B5DE200F62858 /* WHMessageCellView_Sent.xib in Resources */,
 				5F4DED0C185B720500F62858 /* WHSettingsViewController.xib in Resources */,
 				5F3D9E0E1855FA8E0004E9E2 /* WHBaseViewController.xib in Resources */,
+				5FF6CD5E185DFC6300B976C5 /* WHVoiceMessageView.xib in Resources */,
+				5FB17567185D9FE300A83387 /* WHUnknownMessageView.xib in Resources */,
 				5F43789D1844EB9B00B5ADFC /* InfoPlist.strings in Resources */,
 				5F3DBF8C1859EAE9004F2E12 /* WHGuideDeviceViewController.xib in Resources */,
 				5F4378CF1844EC7100B5ADFC /* WHMainWindowController.xib in Resources */,
@@ -604,6 +649,7 @@
 				5F43789F1844EB9B00B5ADFC /* main.m in Sources */,
 				5FC908E31854D40600062006 /* WHApp.m in Sources */,
 				5FC908E61854D56E00062006 /* NSString+WHHelper.m in Sources */,
+				5FB17561185D882300A83387 /* UIColor+PTLViewDebugger.m in Sources */,
 				5FB822A2184B336600FEB020 /* WHContact.m in Sources */,
 				5F3D9E121855FB060004E9E2 /* WHDeviceViewController.m in Sources */,
 				5F4DED1B185B7BC000F62858 /* WHBaseMessageView.m in Sources */,
@@ -619,16 +665,20 @@
 				5F4DED0B185B720500F62858 /* WHSettingsViewController.m in Sources */,
 				5FCD5D391857636C007EB3E9 /* WHNoneDeviceViewController.m in Sources */,
 				5F409F8D185342CE007EB9CD /* WHContactsViewController.m in Sources */,
+				5FB17562185D882300A83387 /* UIView+PTLViewDebugger.m in Sources */,
 				5F409F881853212C007EB9CD /* NSImage+Resize.m in Sources */,
 				5FC908E91854D5D400062006 /* NSDictionary+WHHelper.m in Sources */,
+				5FF6CD5C185DFC4400B976C5 /* WHVoiceMessageView.m in Sources */,
 				5F3DBF94185A0D1E004F2E12 /* WHMessageCellView.m in Sources */,
 				5F3D9E1C18561CAA0004E9E2 /* WHDevice+Weixin.m in Sources */,
 				5F14A9831858B7400085DF23 /* WHUserFolderSelectViewController.m in Sources */,
 				5F409F9218538448007EB9CD /* WHDeviceManager.m in Sources */,
 				5F4378A61844EB9B00B5ADFC /* WHAppDelegate.m in Sources */,
+				5FB17560185D882300A83387 /* NSObject+PTLSwizzle.m in Sources */,
 				5F3D9E1F18561F410004E9E2 /* WHApp+Weixin.m in Sources */,
 				5FB8229B184B2DC900FEB020 /* WHSearch.m in Sources */,
 				5FEB312C1844FF040064B200 /* NSAlert+Popover.m in Sources */,
+				5FB17565185D9F7800A83387 /* WHUnknownMessageView.m in Sources */,
 				5FB822A8184B9E4F00FEB020 /* WHMessage.m in Sources */,
 				5FCD5D3018575FA0007EB3E9 /* NSView+WHAddtion.m in Sources */,
 				5FB822A5184B9CDA00FEB020 /* WHConversation.m in Sources */,
@@ -772,6 +822,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeixinHistory/WeixinHistory-Prefix.pch";
 				INFOPLIST_FILE = "WeixinHistory/WeixinHistory-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/XCC/Workspace/WeixinHistory,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -790,6 +844,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeixinHistory/WeixinHistory-Prefix.pch";
 				INFOPLIST_FILE = "WeixinHistory/WeixinHistory-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/XCC/Workspace/WeixinHistory,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

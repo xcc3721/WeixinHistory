@@ -11,6 +11,8 @@
 @interface WHConversationViewController : WHBaseViewController <NSTableViewDataSource, NSTableViewDelegate>
 
 @property (nonatomic, strong) WHConversation *conversation;
+@property (nonatomic, strong) WHDevice *device;
+@property (nonatomic, copy) NSString *userPath;
 
 @property (weak) IBOutlet NSTableView *tableView;
 

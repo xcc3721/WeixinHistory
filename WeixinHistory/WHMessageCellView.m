@@ -28,6 +28,7 @@
     [self.containerView addSubview:messageView];
     [self.containerView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.containerView bindSameSizeWithSubview:messageView];
+    self.messageView = messageView;
 }
 
 - (void)prepareForReuse
@@ -35,4 +36,8 @@
     [[self.containerView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 
+- (IBAction)showBorder:(id)sender
+{
+    [self ptl_showDebugBorder:YES];
+}
 @end

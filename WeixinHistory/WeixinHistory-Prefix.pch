@@ -23,4 +23,11 @@
 #import <Photon/Photon.h>
 #import "Rebel.h"
 #import "XMLReader.h"
+
+
+
+#define UIColor NSColor
+#define UIView NSView
+
+#import "UIView+PTLViewDebugger.h"
 #endif

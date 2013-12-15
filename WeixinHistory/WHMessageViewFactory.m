@@ -8,41 +8,47 @@
 
 #import "WHMessageViewFactory.h"
 #import "WHTextMessageView.h"
+#import "WHUnknownMessageView.h"
+#import "WHVoiceMessageView.h"
+
+
 #import "WHMessage.h"
 
 @implementation WHMessageViewFactory
 
 + (id<WHMessageViewProtocol>)messageViewWithMessage:(WHMessage *)message
 {
-    switch (message.type) {
-        case MessageTypeText:
-        {
-            return [[WHTextMessageView alloc] initWithMessage:message];
-        }
-            break;
-        case MessageTypeAppShare:
-        {
-            
-        }
-            break;
-        case MessageTypeSystem:
-        {
-            
-        }
-            break;
-        case MessageTypeVoice:
-        {
-            
-        }
-            break;
-            
-        default:
-            break;
-    }
-    return nil;
+//    switch (message.type) {
+//        case MessageTypeText:
+//        {
+//            return [WHTextMessageView viewWithMessage:message];
+//        }
+//            break;
+//            //        case MessageTypeAppShare:
+//            //        {
+//            //
+//            //        }
+//            //            break;
+//            //        case MessageTypeSystem:
+//            //        {
+//            //
+//            //        }
+//            //            break;
+//        case MessageTypeVoice:
+//        {
+//            return [WHVoiceMessageView viewWithMessage:message];
+//        }
+//            //            break;
+//            
+//        default:
+//            return [WHUnknownMessageView viewWithMessage:message];
+//            break;
+//    }
+//    return nil;
+    return [[self messageViewClassForMessage:message] viewWithMessage:message];
 }
 
-+ (Class)messageViewClassForMessage:(WHMessage *)message
++ (Class<WHMessageViewProtocol>)messageViewClassForMessage:(WHMessage *)message
 {
     switch (message.type) {
         case MessageTypeText:
@@ -50,23 +56,24 @@
             return [WHTextMessageView class];
         }
             break;
-        case MessageTypeAppShare:
-        {
-            
-        }
-            break;
-        case MessageTypeSystem:
-        {
-            
-        }
-            break;
+            //        case MessageTypeAppShare:
+            //        {
+            //
+            //        }
+            //            break;
+            //        case MessageTypeSystem:
+            //        {
+            //
+            //        }
+            //            break;
         case MessageTypeVoice:
         {
-            
+            return [WHVoiceMessageView class];
         }
             break;
             
         default:
+            return [WHUnknownMessageView class];
             break;
     }
     return nil;

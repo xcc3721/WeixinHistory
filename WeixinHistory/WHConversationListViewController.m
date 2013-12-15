@@ -94,8 +94,10 @@
         if ([self.tableView selectedRow] != -1)
         {
             WHConversationViewController *conversation = [WHConversationViewController new];
-            conversation.conversation = self.conversations[[self.tableView selectedRow]];
+            [conversation setDevice:self.currentDevice];
+            [conversation setUserPath:self.userPath];
             [self.navigationController pushViewController:conversation animated:YES];
+            conversation.conversation = self.conversations[[self.tableView selectedRow]];
             [conversation.view setTranslatesAutoresizingMaskIntoConstraints:NO];
             [[conversation.view superview] bindSameSizeWithSubview:conversation.view];
 

@@ -12,5 +12,6 @@
 @interface WHBaseMessageView : NSView <WHMessageViewProtocol>
 
 @property (readonly, nonatomic) WHMessage *message;
+@property (weak, nonatomic) id<WHMessageViewDelegate> delegate;
 
 @end

@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "WHMessage.h"
+#import "WHBaseMessageView.h"
 
 @interface WHMessageCellView : NSTableCellView
 
@@ -15,6 +16,7 @@
 
 @property (weak) IBOutlet NSImageView *avatarImageView;
 @property (weak) IBOutlet NSView *containerView;
+@property (strong) id<WHMessageViewProtocol> messageView;
 
 
 @end

@@ -9,11 +9,15 @@
 #import "WHConversationViewController.h"
 #import "WHMessage.h"
 #import "WHMessageCellView.h"
+#import "WHMessageViewFactory.h"
+#import "WHVoiceMessageView.h"
+
+#import <AVFoundation/AVFoundation.h>
 
 
 extern NSString * const WHWechatUserNameKey;
 
-@interface WHConversationViewController ()
+@interface WHConversationViewController () <WHVoiceMessageViewDelegate>
 
 @property (nonatomic, strong) id strongSelf;
 @property (nonatomic, strong) NSImage *frientAvatar;
@@ -42,10 +46,9 @@ extern NSString * const WHWechatUserNameKey;
 
 - (void)awakeFromNib
 {
-    [super awakeFromNib];
     [self.tableView registerNib:[[NSNib alloc] initWithNibNamed:@"WHMessageCellView_Received" bundle:nil] forIdentifier:@"ReceivedMessage"];
     [self.tableView registerNib:[[NSNib alloc] initWithNibNamed:@"WHMessageCellView_Sent" bundle:nil] forIdentifier:@"SentMessage"];
-
+    [super awakeFromNib];
 }
 
 - (void)setConversation:(WHConversation *)conversation
@@ -56,6 +59,8 @@ extern NSString * const WHWechatUserNameKey;
         WHContact *contact = [[_conversation contacts] lastObject];
         NSImage *image = [[NSImage alloc] initWithData:[NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:[contact imageURL]] returningResponse:nil error:nil]];
         self.frientAvatar = image;
+        [[self.tableView enclosingScrollView] layoutSubtreeIfNeeded];
+        [self.tableView reloadData];
     }
 }
 
@@ -82,34 +87,22 @@ extern NSString * const WHWechatUserNameKey;
     
     [view setupWithMessage:message];
     [view.avatarImageView setImage:avatar];
-    
-    NSLog(@"%@", view.containerView);
+    view.messageView.delegate = self;
     
     return view;
 }
 
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row
 {
-    return 200;
+    WHMessage *message = [self.conversation messages][row];
+    Class<WHMessageViewProtocol> class = [WHMessageViewFactory messageViewClassForMessage:message];
+    return [class heightForMessage:message width:NSWidth(tableView.bounds) - 100];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-//    NSString *userName = [[NSUserDefaults standardUserDefaults] stringForKey:WHWechatUserNameKey];
-//    if (userName)
-//    {
-//        NSHTTPURLResponse *response = nil;
-//        NSError *err = nil;
-//        NSData *data = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxgeticon?username=%@", userName]]] returningResponse:&response error:&err];
-//        NSImage *image = [[NSImage alloc] initWithData:data];
-//        self.userAvatar = image;
-//    }
-//    else
-    {
-        self.userAvatar = [NSImage imageNamed:@"defaultAvatar"];
-    }
-    
+    self.userAvatar = [NSImage imageNamed:@"defaultAvatar"];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -131,6 +124,44 @@ extern NSString * const WHWechatUserNameKey;
     [super viewDidDisappear:animated];
     self.strongSelf = nil;
     
+}
+
+#pragma mark -
+- (void)playVoiceForMessage:(WHMessage *)message
+{
+    NSLog(@"%@", message);
+    WHContact *contact = [[self.conversation contacts] lastObject];
+    NSString *md5 = [[contact userName] MD5Digest];
+    NSInteger num = message.localId;
+    [self.device weixinWithHandler:^(WHApp *app)
+     {
+         NSString *audioPath = [self.userPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/Audio/%@/%ld.aud", md5, num]];
+         void (^handler)(NSString *) = ^(NSString *localPath)
+         {
+             NSMutableData *voice = [NSMutableData dataWithBytes:"#!AMR\n" length:6];
+             [voice appendData:[NSData dataWithContentsOfFile:localPath]];
+//             [voice writeToFile:localPath atomically:YES];
+             
+             NSError *error = nil;
+             AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithData:voice error:&error];
+             @try {
+                 NSLog(@"%d", [player prepareToPlay]);
+                 [player play];
+             }
+             @catch (NSException *exception) {
+                 NSLog(@"%@", exception);
+             }
+             @finally {
+                 
+             }
+             
+             
+         };
+         if ([app copyfileAtPath:audioPath completion:handler])
+        {
+            NSLog(@"Voice file for [%@] not exists!", message);
+        }
+     }];
 }
 
 @end

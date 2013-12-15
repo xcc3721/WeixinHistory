@@ -13,6 +13,6 @@
 @interface WHMessageViewFactory : NSObject
 
 + (id<WHMessageViewProtocol>)messageViewWithMessage:(WHMessage *)message;
-+ (Class)messageViewClassForMessage:(WHMessage *)message;
++ (Class<WHMessageViewProtocol>)messageViewClassForMessage:(WHMessage *)message;
 
 @end

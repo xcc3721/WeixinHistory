@@ -35,13 +35,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeixinHistory/WHConversationViewController.m"
-            timestampString = "408649465.987061"
+            filePath = "WeixinHistory/WHTextMessageView.m"
+            timestampString = "408791363.571079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "-tableView:viewForTableColumn:row:"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "-scrollWheel:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -51,13 +51,75 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeixinHistory/WHTextMessageView.m"
-            timestampString = "408649935.451511"
+            filePath = "WeixinHistory/WHConversationViewController.m"
+            timestampString = "408815803.075537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "-setupView"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "-tableView:heightOfRow:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[WHConversationViewController tableView:heightOfRow:]"
+                  moduleName = "WeixinHistory"
+                  urlString = "file:///Users/XCC/Workspace/WeixinHistory/WeixinHistory/WHConversationViewController.m"
+                  timestampString = "408811967.868416"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "215">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[WHConversationViewController tableView:heightOfRow:]"
+                  moduleName = "WeixinHistory"
+                  urlString = "file:///Users/XCC/Workspace/WeixinHistory/WeixinHistory/WHConversationViewController.m"
+                  timestampString = "408811967.868592"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "395">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeixinHistory/WHMessageCellView.m"
+            timestampString = "408814185.379911"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-showBorder:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeixinHistory/WHConversationViewController.m"
+            timestampString = "408820137.98487"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "-playVoiceForMessage:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -67,45 +129,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeixinHistory/WHTextMessageView.m"
-            timestampString = "408650340.327103"
+            filePath = "WeixinHistory/WHConversationViewController.m"
+            timestampString = "408820143.806653"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "-setupView"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WeixinHistory/WHTextMessageView.m"
-            timestampString = "408650401.289127"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "-awakeFromNib"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WeixinHistory/WHBaseMessageView.m"
-            timestampString = "408650481.107039"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "-initWithMessage:"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "-playVoiceForMessage:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

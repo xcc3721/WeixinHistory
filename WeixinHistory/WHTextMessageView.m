@@ -9,6 +9,26 @@
 #import "WHTextMessageView.h"
 #import "WHMessage.h"
 
+@interface WHMessageCellScrollView : NSScrollView
+
+@end
+
+@implementation WHMessageCellScrollView
+
+- (void)scrollWheel:(NSEvent *)theEvent
+{
+    [self.enclosingScrollView scrollWheel:theEvent];
+}
+
+@end
+
+@interface WHBaseMessageView ()
+
++ (instancetype)makeView;
+@property (readwrite, nonatomic, strong) WHMessage *message;
+
+@end
+
 @implementation WHTextMessageView
 
 - (id)initWithFrame:(NSRect)frame
@@ -22,13 +42,30 @@
 
 - (void)setupView
 {
-    [self.layer setBackgroundColor:[NSColor redColor].CGColor];
-    [self.textLabel setStringValue:[self.message message]];
+    [super setupView];
+    [self.textView setString:[self.message message]];
 }
 
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    NSLog(@"fasdf");
+    [self.textView setBackgroundColor:[NSColor clearColor]];
 }
+
++ (CGFloat)heightForMessage:(WHMessage *)message width:(CGFloat)width
+{
+    static WHTextMessageView *textMessageView = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        textMessageView = [self makeView];
+    });
+    textMessageView.message = message;
+    [textMessageView setupView];
+    
+    NSRect rect = [textMessageView.textView.textStorage boundingRectWithSize:NSMakeSize(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin];
+    
+    return MAX(NSHeight(rect) + 10, [super heightForMessage:message width:width]);
+}
+
+
 @end

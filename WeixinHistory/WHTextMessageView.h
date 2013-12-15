@@ -10,6 +10,8 @@
 #import "WHBaseMessageView.h"
 
 @interface WHTextMessageView : WHBaseMessageView
-@property (weak) IBOutlet NSTextField *textLabel;
+
+
+@property (unsafe_unretained) IBOutlet NSTextView *textView;
 
 @end

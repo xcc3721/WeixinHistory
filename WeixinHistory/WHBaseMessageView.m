@@ -7,6 +7,8 @@
 //
 
 #import "WHBaseMessageView.h"
+#import "WHMessage.h"
+
 @interface WHBaseMessageView ()
 @property (readwrite, nonatomic, strong) WHMessage *message;
 @end
@@ -22,7 +24,16 @@
     return self;
 }
 
-- (instancetype)initWithMessage:(WHMessage *)message
++ (instancetype)viewWithMessage:(WHMessage *)message
+{
+    WHBaseMessageView *result = [self makeView];
+    result.message = message;
+    [result setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [result setupView];
+    return result;
+}
+
++ (instancetype)makeView
 {
     NSNib *nib = [[NSNib alloc] initWithNibNamed:NSStringFromClass([self class]) bundle:nil];
     NSArray *array = nil;
@@ -32,17 +43,14 @@
     }
     __block WHBaseMessageView *result = nil;
     [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
-    {
-        if ([obj isKindOfClass:[self class]]) {
-            result = obj;
-            *stop = YES;
-        }
-    }];
-    result.message = message;
-    [result setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [result setupView];
-    self = result;
-    return self;
+     {
+         if ([obj isKindOfClass:[self class]]) {
+             result = obj;
+             *stop = YES;
+         }
+     }];
+    [result setWantsLayer:YES];
+    return result;
 }
 
 - (void)awakeFromNib
@@ -53,6 +61,29 @@
 
 - (void)setupView
 {
-    
+    [self.layer setCornerRadius:10];
+    NSColor *borderColor = nil;
+    switch ([self.message dest]) {
+        case MessageReceived:
+        {
+            borderColor = [NSColor blueColor];
+        }
+            break;
+            case MessageSent:
+        {
+            borderColor = [NSColor redColor];
+        }
+            break;
+            
+        default:
+            break;
+    }
+    [self.layer setBorderColor:borderColor.CGColor];
+    [self.layer setBorderWidth:3];
+}
+
++ (CGFloat)heightForMessage:(WHMessage *)message width:(CGFloat)width
+{
+    return 138;
 }
 @end
