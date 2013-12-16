@@ -11,6 +11,7 @@
 #import "WHMessageCellView.h"
 #import "WHMessageViewFactory.h"
 #import "WHVoiceMessageView.h"
+#import "WHVoiceManager.h"
 
 #import <AVFoundation/AVFoundation.h>
 
@@ -22,6 +23,8 @@ extern NSString * const WHWechatUserNameKey;
 @property (nonatomic, strong) id strongSelf;
 @property (nonatomic, strong) NSImage *frientAvatar;
 @property (nonatomic, strong) NSImage *userAvatar;
+@property (nonatomic, strong) AVAudioPlayer *player;
+
 
 @end
 
@@ -48,7 +51,14 @@ extern NSString * const WHWechatUserNameKey;
 {
     [self.tableView registerNib:[[NSNib alloc] initWithNibNamed:@"WHMessageCellView_Received" bundle:nil] forIdentifier:@"ReceivedMessage"];
     [self.tableView registerNib:[[NSNib alloc] initWithNibNamed:@"WHMessageCellView_Sent" bundle:nil] forIdentifier:@"SentMessage"];
+    
+    
+    [self.navigationItem setRightBarButtonItem:[[PXBarButtonItem alloc] initWithTitle:@"Play All Voice" target:self action:@selector(playAllVoices:)]];
+    
+    
     [super awakeFromNib];
+    
+    
 }
 
 - (void)setConversation:(WHConversation *)conversation
@@ -103,6 +113,8 @@ extern NSString * const WHWechatUserNameKey;
 {
     [super viewWillAppear:animated];
     self.userAvatar = [NSImage imageNamed:@"defaultAvatar"];
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -110,6 +122,7 @@ extern NSString * const WHWechatUserNameKey;
     [super viewDidAppear:animated];
     [self.tableView reloadData];
     self.strongSelf = self;
+    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(windowDidResize:) name:NSWindowDidEndLiveResizeNotification object:nil];
 }
@@ -127,6 +140,24 @@ extern NSString * const WHWechatUserNameKey;
 }
 
 #pragma mark -
+- (void)playAllVoices:(id)sender
+{
+    WHContact *contact = [[self.conversation contacts] lastObject];
+    for (WHMessage *message in self.conversation.messages)
+    {
+        NSString *md5 = [[contact userName] MD5Digest];
+        NSInteger num = message.localId;
+        if ([message type] == MessageTypeVoice && [message dest] == MessageReceived)
+        {
+            NSString *audioPath = [self.userPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/Audio/%@/%ld.aud", md5, num]];
+            WHVoiceOperation *op = [WHVoiceOperation operationWithVoicePath:audioPath device:self.device];
+            [[WHVoiceManager defaultManager] addVoiceOperation:op];
+        }
+    }
+
+}
+
+
 - (void)playVoiceForMessage:(WHMessage *)message
 {
     NSLog(@"%@", message);
@@ -140,27 +171,17 @@ extern NSString * const WHWechatUserNameKey;
          {
              NSMutableData *voice = [NSMutableData dataWithBytes:"#!AMR\n" length:6];
              [voice appendData:[NSData dataWithContentsOfFile:localPath]];
-//             [voice writeToFile:localPath atomically:YES];
              
              NSError *error = nil;
-             AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithData:voice error:&error];
-             @try {
-                 NSLog(@"%d", [player prepareToPlay]);
-                 [player play];
-             }
-             @catch (NSException *exception) {
-                 NSLog(@"%@", exception);
-             }
-             @finally {
-                 
-             }
+             self.player = [[AVAudioPlayer alloc] initWithData:voice error:&error];
+             [self.player play];
              
              
          };
          if ([app copyfileAtPath:audioPath completion:handler])
-        {
-            NSLog(@"Voice file for [%@] not exists!", message);
-        }
+         {
+             NSLog(@"Voice file for [%@] not exists!", message);
+         }
      }];
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A598" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
     </dependencies>
@@ -38,10 +38,24 @@
                         <action selector="showBorder:" target="cEH-EJ-Ohb" id="m9f-XX-Xxx"/>
                     </connections>
                 </button>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MH6-sl-JtA">
+                    <rect key="frame" x="358" y="61" width="94" height="13"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="ufx-Yv-uHi"/>
+                    </constraints>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Date Label" id="g3T-w8-A7U">
+                        <font key="font" size="10" name="LucidaGrande"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
                 <constraint firstItem="hD9-1s-KB2" firstAttribute="top" secondItem="cEH-EJ-Ohb" secondAttribute="top" constant="20" id="13P-7a-RPZ"/>
                 <constraint firstAttribute="trailing" secondItem="FeI-pT-45O" secondAttribute="trailing" constant="100" id="6IV-Ed-sUR"/>
+                <constraint firstItem="hD9-1s-KB2" firstAttribute="centerX" secondItem="MH6-sl-JtA" secondAttribute="centerX" id="6gi-Rb-GJE"/>
+                <constraint firstItem="MH6-sl-JtA" firstAttribute="top" secondItem="kxE-3m-Mmy" secondAttribute="bottom" constant="8" id="EJ6-4e-XEl"/>
                 <constraint firstAttribute="trailing" secondItem="kxE-3m-Mmy" secondAttribute="trailing" constant="20" id="I8e-ec-Kyl"/>
                 <constraint firstAttribute="bottom" secondItem="FeI-pT-45O" secondAttribute="bottom" id="Tq9-Ao-XVH"/>
                 <constraint firstItem="kxE-3m-Mmy" firstAttribute="top" secondItem="hD9-1s-KB2" secondAttribute="bottom" constant="7" id="YnK-do-Pe9"/>
@@ -52,6 +66,7 @@
             <connections>
                 <outlet property="avatarImageView" destination="hD9-1s-KB2" id="WuX-tT-C0M"/>
                 <outlet property="containerView" destination="FeI-pT-45O" id="Yap-Ir-PjA"/>
+                <outlet property="dateLabel" destination="MH6-sl-JtA" id="xab-On-ha9"/>
             </connections>
         </customView>
     </objects>

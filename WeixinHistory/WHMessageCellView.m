@@ -29,6 +29,14 @@
     [self.containerView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.containerView bindSameSizeWithSubview:messageView];
     self.messageView = messageView;
+    
+    static NSDateFormatter *df = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"yyyy-MM-dd\nHH:mm:ss"];
+    });
+    [self.dateLabel setStringValue:[df stringFromDate:[message createTime]]];
 }
 
 - (void)prepareForReuse

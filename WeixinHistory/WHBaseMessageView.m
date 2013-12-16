@@ -84,6 +84,6 @@
 
 + (CGFloat)heightForMessage:(WHMessage *)message width:(CGFloat)width
 {
-    return 138;
+    return 150;
 }
 @end

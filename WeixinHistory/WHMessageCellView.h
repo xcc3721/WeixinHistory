@@ -17,6 +17,7 @@
 @property (weak) IBOutlet NSImageView *avatarImageView;
 @property (weak) IBOutlet NSView *containerView;
 @property (strong) id<WHMessageViewProtocol> messageView;
+@property (weak) IBOutlet NSTextField *dateLabel;
 
 
 @end

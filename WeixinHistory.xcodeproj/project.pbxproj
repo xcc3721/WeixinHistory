@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1C56061718597689009450B7 /* Photon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F14A97C1858B2F90085DF23 /* Photon.framework */; };
 		1C560618185976A4009450B7 /* Photon.framework in Resources */ = {isa = PBXBuildFile; fileRef = 5F14A97C1858B2F90085DF23 /* Photon.framework */; };
+		1CFB3935185EE4F400B82354 /* WHVoiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB3934185EE4F400B82354 /* WHVoiceManager.m */; };
 		5F14A9831858B7400085DF23 /* WHUserFolderSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F14A9811858B7400085DF23 /* WHUserFolderSelectViewController.m */; };
 		5F14A9841858B7400085DF23 /* WHUserFolderSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F14A9821858B7400085DF23 /* WHUserFolderSelectViewController.xib */; };
 		5F3D9E0D1855FA8E0004E9E2 /* WHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D9E0B1855FA8E0004E9E2 /* WHBaseViewController.m */; };
@@ -92,6 +93,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1CFB3933185EE4F400B82354 /* WHVoiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHVoiceManager.h; sourceTree = "<group>"; };
+		1CFB3934185EE4F400B82354 /* WHVoiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHVoiceManager.m; sourceTree = "<group>"; };
 		5F14A97C1858B2F90085DF23 /* Photon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Photon.framework; sourceTree = "<group>"; };
 		5F14A9801858B7400085DF23 /* WHUserFolderSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHUserFolderSelectViewController.h; sourceTree = "<group>"; };
 		5F14A9811858B7400085DF23 /* WHUserFolderSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHUserFolderSelectViewController.m; sourceTree = "<group>"; };
@@ -276,6 +279,8 @@
 				5FF6CD5A185DFC4400B976C5 /* WHVoiceMessageView.h */,
 				5FF6CD5B185DFC4400B976C5 /* WHVoiceMessageView.m */,
 				5FF6CD5D185DFC6300B976C5 /* WHVoiceMessageView.xib */,
+				1CFB3933185EE4F400B82354 /* WHVoiceManager.h */,
+				1CFB3934185EE4F400B82354 /* WHVoiceManager.m */,
 			);
 			name = Conversation;
 			sourceTree = "<group>";
@@ -672,6 +677,7 @@
 				5F3DBF94185A0D1E004F2E12 /* WHMessageCellView.m in Sources */,
 				5F3D9E1C18561CAA0004E9E2 /* WHDevice+Weixin.m in Sources */,
 				5F14A9831858B7400085DF23 /* WHUserFolderSelectViewController.m in Sources */,
+				1CFB3935185EE4F400B82354 /* WHVoiceManager.m in Sources */,
 				5F409F9218538448007EB9CD /* WHDeviceManager.m in Sources */,
 				5F4378A61844EB9B00B5ADFC /* WHAppDelegate.m in Sources */,
 				5FB17560185D882300A83387 /* NSObject+PTLSwizzle.m in Sources */,

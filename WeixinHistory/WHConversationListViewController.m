@@ -94,6 +94,7 @@
         if ([self.tableView selectedRow] != -1)
         {
             WHConversationViewController *conversation = [WHConversationViewController new];
+            [conversation view];
             [conversation setDevice:self.currentDevice];
             [conversation setUserPath:self.userPath];
             [self.navigationController pushViewController:conversation animated:YES];
