@@ -157,6 +157,23 @@ extern NSString * const WHWechatUserNameKey;
 
 }
 
+- (IBAction)playBelow:(id)sender
+{
+    WHContact *contact = [[self.conversation contacts] lastObject];
+    [[WHVoiceManager defaultManager] stopAll];
+    for (NSInteger i = [self.tableView selectedRow]; i < self.conversation.messages.count; i++)
+    {
+        WHMessage *message = self.conversation.messages[i];
+        NSString *md5 = [[contact userName] MD5Digest];
+        NSInteger num = message.localId;
+        if ([message type] == MessageTypeVoice && [message dest] == MessageReceived)
+        {
+            NSString *audioPath = [self.userPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/Audio/%@/%ld.aud", md5, num]];
+            WHVoiceOperation *op = [WHVoiceOperation operationWithVoicePath:audioPath device:self.device];
+            [[WHVoiceManager defaultManager] addVoiceOperation:op];
+        }
+    }
+}
 
 - (void)playVoiceForMessage:(WHMessage *)message
 {

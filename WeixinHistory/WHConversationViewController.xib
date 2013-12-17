@@ -43,6 +43,26 @@
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES"/>
+                                        <prototypeCellViews>
+                                            <tableCellView id="AZL-f7-Que">
+                                                <rect key="frame" x="1" y="1" width="551" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6AW-hL-SyI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="551" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="CiN-St-Yki">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                </subviews>
+                                                <connections>
+                                                    <outlet property="textField" destination="6AW-hL-SyI" id="BYT-3h-3Ob"/>
+                                                </connections>
+                                            </tableCellView>
+                                        </prototypeCellViews>
                                     </tableColumn>
                                 </tableColumns>
                                 <connections>
@@ -61,6 +81,9 @@
                         <rect key="frame" x="-15" y="17" width="16" height="0.0"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
+                    <connections>
+                        <outlet property="menu" destination="L01-Ba-V7A" id="TNY-A1-ZUv"/>
+                    </connections>
                 </scrollView>
             </subviews>
             <constraints>
@@ -70,5 +93,15 @@
                 <constraint firstItem="rh5-kS-g89" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="jFW-ek-bdv"/>
             </constraints>
         </customView>
+        <menu id="L01-Ba-V7A">
+            <items>
+                <menuItem title="Play Below" id="jbf-kc-p5z">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="playBelow:" target="-2" id="wQ0-sQ-U1K"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
     </objects>
 </document>

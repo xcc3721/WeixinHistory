@@ -99,4 +99,9 @@
     [self.queue addOperation:operation];
 }
 
+- (void)stopAll
+{
+    [self.queue cancelAllOperations];
+}
+
 @end

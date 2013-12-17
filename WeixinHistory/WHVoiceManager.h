@@ -20,5 +20,6 @@
 
 + (instancetype)defaultManager;
 - (void)addVoiceOperation:(NSOperation *)operation;
+- (void)stopAll;
 
 @end
